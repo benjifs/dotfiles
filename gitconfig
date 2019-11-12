@@ -1,0 +1,9 @@
+[alias]
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+
+[core]
+	excludesfile = ~/.gitignore
+
+[color]
+	ui = auto

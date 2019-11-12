@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Set workspace
+export WORKSPACE=$HOME/workspace
+
+# Make vim the default editor.
+export EDITOR='vim';
+
+# Prefer US English and use UTF-8.
+export LANG='en_US.UTF-8';
+export LC_ALL='en_US.UTF-8';
+
+# Don’t clear the screen after quitting a manual page.
+export MANPAGER='less -X';
+
+# Export path to include workspace scripts
+export PATH="$WORKSPACE/bin:/usr/local/sbin:$PATH";

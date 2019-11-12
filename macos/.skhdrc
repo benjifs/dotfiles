@@ -1,0 +1,57 @@
+
+# Open Alacritty
+cmd - return : open -na /Applications/Alacritty.app
+
+# enter fullscreen mode for the focused container
+alt - f : chunkc tiling::window --toggle fullscreen
+
+# change focus between tiling / floating windows
+shift + alt - space : chunkc tiling::window --toggle float
+
+# change layout of desktop
+alt - e : chunkc tiling::desktop --layout bsp
+alt - s : chunkc tiling::desktop --layout monocle
+
+# kill focused window
+shift + alt - q : chunkc tiling::window --close
+
+# change focus
+alt - h : chunkc tiling::window --focus west
+alt - j : chunkc tiling::window --focus south
+alt - k : chunkc tiling::window --focus north
+alt - l : chunkc tiling::window --focus east
+
+#alt - p : chunkc tiling::window --focus prev
+#alt - n : chunkc tiling::window --focus next
+
+# move focused window
+shift + alt - h : chunkc tiling::window --warp west
+shift + alt - j : chunkc tiling::window --warp south
+shift + alt - k : chunkc tiling::window --warp north
+shift + alt - l : chunkc tiling::window --warp east
+
+alt - r : chunkc tiling::desktop --rotate 90
+
+# move focused container to workspace
+shift + alt - m : chunkc tiling::window --send-to-desktop $(chunkc get _last_active_desktop)
+shift + alt - p : chunkc tiling::window --send-to-desktop prev
+shift + alt - n : chunkc tiling::window --send-to-desktop next
+
+# Focus monitor
+ctrl + alt - m : chunkc tiling::monitor -f prev
+ctrl + alt - 1 : chunkc tiling::monitor -f 1
+ctrl + alt - 2 : chunkc tiling::monitor -f 2
+
+# increase region size
+# https://github.com/koekeishiya/chunkwm/wiki/Useful-tips-and-workarounds
+shift + alt - a : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge west; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge east
+shift + alt - s : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge south; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge north
+shift + alt - w : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge north; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge south
+shift + alt - d : chunkc tiling::window --use-temporary-ratio 0.05 --adjust-window-edge east; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge west
+
+# equalize size of windows
+shift + alt - 0 : chunkc tiling::desktop --equalize
+
+# Fix for app screenshot
+cmd + shift - 4 -> : chunkc border::clear
+
