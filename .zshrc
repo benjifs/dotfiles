@@ -1,6 +1,7 @@
 # Basic zsh configuration
 
 export ZSH=$HOME/.config/zsh
+export ZSH_THEME=bnj
 
 [ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
 [ -f "$HOME/.exports" ] && source "$HOME/.exports"
