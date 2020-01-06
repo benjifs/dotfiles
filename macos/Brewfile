@@ -1,7 +1,7 @@
 # Brewfile
 
 # For firefox-nightly
-tap "caskroom/versions"
+tap "homebrew/cask-versions"
 # For chunkwm
 tap "koekeishiya/formulae"
 
@@ -83,7 +83,7 @@ cask "vlc"
 cask "ngrok"
 
 # Fonts
-tap "caskroom/fonts"
-cask "caskroom/fonts/font-fira-mono"
-cask "caskroom/fonts/font-fira-mono-for-powerline"
-cask "caskroom/fonts/font-hack"
+tap "homebrew/cask-fonts"
+cask "font-fira-mono"
+cask "font-fira-mono-for-powerline"
+cask "font-hack"
