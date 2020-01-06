@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-export DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# Get current dir (so run this script from anywhere)
+export SCRIPTS="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+export DOTFILES_DIR="$( cd "$( dirname "$SCRIPTS" )" && pwd )"
 
 # Include helpers
-source "$DOTFILES_DIR/scripts/helpers.sh"
+source "$SCRIPTS/helpers.sh"
 
 link_folder "$DOTFILES_DIR"
 [ ! -d "$HOME/.config" ] && mkdir "$HOME/.config"

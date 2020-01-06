@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
 # Get current dir (so run this script from anywhere)
-export DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+export SCRIPTS="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Include helpers
-source "$DOTFILES_DIR/scripts/helpers.sh"
+source "$SCRIPTS/helpers.sh"
+
+exit
 
 running "checking sudo state"
 # Ask for the administrator password upfront
