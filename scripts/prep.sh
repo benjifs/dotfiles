@@ -6,8 +6,6 @@ export SCRIPTS="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # Include helpers
 source "$SCRIPTS/helpers.sh"
 
-exit
-
 running "checking sudo state"
 # Ask for the administrator password upfront
 sudo -v

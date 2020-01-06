@@ -31,7 +31,7 @@ success() {
 }
 
 warn() {
-	printf "${COL_YELLOW}$1${COL_RESET}\n"
+	printf " ${COL_YELLOW}$1${COL_RESET}\n"
 }
 
 fail() {
