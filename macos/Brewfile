@@ -1,7 +1,7 @@
 # Brewfile
 
 # For firefox-nightly
-tap "caskroom/versions"
+tap "homebrew/cask-versions"
 # For chunkwm
 tap "koekeishiya/formulae"
 
@@ -29,8 +29,8 @@ brew "wget"
 brew "zsh"
 
 # Window Manager
-brew "chunkwm"
-brew "skhd"
+brew "chunkwm", restart_service: true
+brew "skhd", restart_service: true
 
 # GPG
 brew "gnupg"
@@ -40,7 +40,6 @@ brew "pinentry-mac"
 brew "cmatrix"
 brew "figlet"
 brew "fortune"
-brew "greed"
 brew "lolcat"
 brew "megatools"
 brew "mitmproxy"
@@ -49,6 +48,7 @@ brew "nmap"
 
 # Testing
 brew "fff"
+brew "greed"
 
 # Casks
 cask "alacritty"
@@ -83,7 +83,7 @@ cask "vlc"
 cask "ngrok"
 
 # Fonts
-tap "caskroom/fonts"
-cask "caskroom/fonts/font-fira-mono"
-cask "caskroom/fonts/font-fira-mono-for-powerline"
-cask "caskroom/fonts/font-hack"
+tap "homebrew/cask-fonts"
+cask "font-fira-mono"
+cask "font-fira-mono-for-powerline"
+cask "font-hack"
