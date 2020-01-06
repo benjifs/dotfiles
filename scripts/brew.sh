@@ -46,7 +46,7 @@ fi
 success "Homebrew initial setup complete"
 
 info "Running brew bundle"
-brew bundle $DOTFILES_DIR/macos/Brewfile
+brew bundle --file=$DOTFILES_DIR/macos/Brewfile
 
 success "Homebrew apps installed"
 
