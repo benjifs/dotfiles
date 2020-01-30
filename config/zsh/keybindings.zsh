@@ -8,6 +8,8 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search
 bindkey "^[[B" down-line-or-beginning-search
 
+bindkey "^R" history-incremental-search-backward
+
 # Clear line with CTRL-U
 # Should work out of the box but sometimes
 # without this line it doesn't. Keeping for now
