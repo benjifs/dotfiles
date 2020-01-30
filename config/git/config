@@ -3,7 +3,11 @@
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.config/git/gitignore
+	hookspath = ~/.config/git/hooks
 
 [color]
 	ui = auto
+
+[commit]
+	template = ~/.config/git/gitmessage
