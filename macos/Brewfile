@@ -2,20 +2,20 @@
 
 # For firefox-nightly
 tap "homebrew/cask-versions"
-# For chunkwm
+# For yabai and skhd
 tap "koekeishiya/formulae"
 
 brew "ack"
 brew "coreutils"
 brew "curl"
-brew "dnsmasq", restart_service: true
+# brew "dnsmasq", restart_service: true
 brew "libevent"
 brew "findutils"
 brew "git"
 brew "gnu-sed"
 brew "moreutils"
-brew "mysql", restart_service: true, link: false
-brew "n"
+# brew "mysql", restart_service: true, link: false
+# brew "n"
 brew "ngrep"
 brew "p7zip"
 brew "python"
@@ -29,7 +29,7 @@ brew "wget"
 brew "zsh"
 
 # Window Manager
-brew "chunkwm", restart_service: true
+brew "yabai", restart_service: true
 brew "skhd", restart_service: true
 
 # GPG
@@ -60,14 +60,14 @@ cask "balenaetcher"
 cask "bitbar"
 cask "brave-browser"
 # cask "calibre"
-cask "cyberduck"
+# cask "cyberduck"
 # cask "discord"
 # cask "docker"
-cask "dropbox"
+# cask "dropbox"
 cask "firefox-nightly"
 # cask "gimp"
 cask "google-chrome"
-# cask "insomnia"
+cask "insomnia"
 # cask "java"
 cask "keybase"
 cask "slack"
@@ -78,9 +78,6 @@ cask "thunderbird"
 # cask "virtualbox"
 cask "visual-studio-code"
 cask "vlc"
-
-# Testing
-cask "ngrok"
 
 # Fonts
 tap "homebrew/cask-fonts"
