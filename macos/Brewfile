@@ -2,7 +2,7 @@
 
 # For firefox-nightly
 tap "homebrew/cask-versions"
-# For yabai and skhd
+# For chunkwm, skhd, and yabai
 tap "koekeishiya/formulae"
 
 brew "ack"
@@ -29,8 +29,9 @@ brew "wget"
 brew "zsh"
 
 # Window Manager
-brew "yabai", restart_service: true
+brew "chunkwm", restart_service: true
 brew "skhd", restart_service: true
+# brew "yabai", restart_service: true
 
 # GPG
 brew "gnupg"
