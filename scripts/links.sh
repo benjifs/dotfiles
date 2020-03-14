@@ -24,8 +24,10 @@ elif [ "$(uname)" == "Darwin" ]; then
 fi
 
 [ ! -d "$HOME/.ssh" ] && mkdir "$HOME/.ssh"
-chmod 600 "$DOTFILES_DIR/ssh/config" # Fix for permissions issue
-link "$DOTFILES_DIR/ssh/config" "$HOME/.ssh/config"
+if [ -f "$DOTFILES_DIR/ssh/config" ]; then
+	chmod 600 "$DOTFILES_DIR/ssh/config" # Fix for permissions issue
+	link "$DOTFILES_DIR/ssh/config" "$HOME/.ssh/config"
+fi
 
 # ~/.config/git/config has general git aliases and settings
 # ~/.gitconfig is not symlinked. This file will hold user settings

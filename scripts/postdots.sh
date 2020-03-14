@@ -8,15 +8,15 @@ source "$SCRIPTS/helpers.sh"
 
 info "checking default shell"
 if [ "$(uname -s)" == "Darwin" ]; then
+	running "setting zsh as default shell"
 	CURRENTSHELL=$(dscl . -read /Users/$USER UserShell | awk '{print $2}')
 	if [[ "$CURRENTSHELL" != "/usr/local/bin/zsh" ]]; then
-		running "setting newer homebrew zsh (/usr/local/bin/zsh) as your shell (password required)"
 		# sudo bash -c 'echo "/usr/local/bin/zsh" >> /etc/shells'
 		# chsh -s /usr/local/bin/zsh
 		sudo dscl . -change /Users/$USER UserShell $SHELL /usr/local/bin/zsh > /dev/null 2>&1
 		success
 	else
-		info "zsh is already the default shell"
+		warn "ZSH IS DEFAULT SHELL"
 	fi
 fi
 

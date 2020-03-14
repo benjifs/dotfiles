@@ -29,4 +29,4 @@ fi
 . "$SCRIPTS/links.sh"
 . "$SCRIPTS/postdots.sh"
 
-success "setup complete"
+success "Setup complete"

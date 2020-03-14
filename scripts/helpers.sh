@@ -19,7 +19,7 @@ info() {
 }
 
 running() {
-	printf "${COL_RESET}${COL_CYAN}  ⇒${COL_RESET}    $1..."
+	printf "${COL_RESET}${COL_CYAN}  ⇒${COL_RESET}    $1... "
 }
 
 success() {
@@ -71,3 +71,4 @@ link_folder() {
 		link "$file" "$DEST/$filename"
 	done
 }
+
