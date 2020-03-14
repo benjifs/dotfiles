@@ -29,9 +29,9 @@ brew "wget"
 brew "zsh"
 
 # Window Manager
-brew "chunkwm", restart_service: true
 brew "skhd", restart_service: true
-# brew "yabai", restart_service: true
+brew "yabai", restart_service: true
+brew "jq"
 
 # GPG
 brew "gnupg"
