@@ -15,7 +15,6 @@ brew "git"
 brew "gnu-sed"
 brew "moreutils"
 # brew "mysql", restart_service: true, link: false
-# brew "n"
 brew "ngrep"
 brew "p7zip"
 brew "python"
@@ -27,6 +26,10 @@ brew "unrar"
 brew "vim"
 brew "wget"
 brew "zsh"
+
+# JS Things
+# brew "n"
+brew "yarn"
 
 # Window Manager
 brew "skhd", restart_service: true
