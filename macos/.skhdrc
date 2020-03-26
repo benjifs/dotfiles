@@ -37,6 +37,9 @@ shift + alt - a : yabai -m window west --resize right:-20:0 2> /dev/null || yaba
 shift + alt - s : yabai -m window north --resize bottom:0:20 2> /dev/null || yabai -m window --resize bottom:0:20
 shift + alt - d : yabai -m window east --resize left:20:0 2> /dev/null || yabai -m window --resize left:20:0
 
+shift + alt - q : yabai -m window west --resize right:-100:0 2> /dev/null || yabai -m window --resize right:-100:0
+shift + alt - e : yabai -m window east --resize left:100:0 2> /dev/null || yabai -m window --resize left:100:0
+
 # balance size of windows
 shift + alt - 0 : yabai -m space --balance
 
