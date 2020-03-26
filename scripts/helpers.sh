@@ -37,7 +37,7 @@ warn() {
 fail() {
 	printf "${COL_RED}FAIL${COL_RESET}\n"
 	if [ $# -eq 1 ]; then
-		printf "${COL_RESET}${COL_RED}⇒${COL_RESET}      $1\n"
+		printf "${COL_RESET}${COL_RED}  ⇒${COL_RESET}    $1\n"
 	fi
 }
 
