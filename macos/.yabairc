@@ -44,15 +44,18 @@ yabai -m config right_padding                20
 yabai -m config window_gap                   10
 
 # rules
-yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
-yabai -m rule --add label="The Unarchiver" app="^The Unarchiver$" manage=off
-yabai -m rule --add label="Archive Utility" app="^Archive Utility$" manage=off
-yabai -m rule --add label="VirtualBox" app="^VirtualBox$" manage=off
-yabai -m rule --add label="Xcode" app="^Xcode$" manage=off
-yabai -m rule --add label="Android Studio" app="^Android Studio$" manage=off
-yabai -m rule --add label="System Preferences" app="^System Preferences$" manage=off
-yabai -m rule --add label="Installer" app="^Installer$" manage=off
- 
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Digital Color Meter$" manage=off
+yabai -m rule --add app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
+yabai -m rule --add app="^Installer$" manage=off
+yabai -m rule --add app="^System Preferences$" manage=off
+
+yabai -m rule --add app="^The Unarchiver$" manage=off
+yabai -m rule --add app="^Archive Utility$" manage=off
+yabai -m rule --add app="^VirtualBox$" manage=off
+
 yabai -m rule --add app="^Cisco AnyConnect" manage=off
+
+yabai -m rule --add app="^Android Studio$" manage=off
+yabai -m rule --add app="^Simulator" manage=off
+yabai -m rule --add app="^Xcode$" manage=off
