@@ -31,6 +31,9 @@ brew "zsh"
 # brew "n"
 brew "yarn"
 
+# GO Things
+brew "go"
+
 # Window Manager
 brew "skhd", restart_service: true
 brew "yabai", restart_service: true
