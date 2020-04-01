@@ -50,11 +50,13 @@ yabai -m rule --add app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=
 yabai -m rule --add app="^Installer$" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
 
-yabai -m rule --add app="^The Unarchiver$" manage=off
 yabai -m rule --add app="^Archive Utility$" manage=off
-yabai -m rule --add app="^VirtualBox$" manage=off
-
 yabai -m rule --add app="^Cisco AnyConnect" manage=off
+yabai -m rule --add app="^The Unarchiver$" manage=off
+yabai -m rule --add app="^VirtualBox$" manage=off
+yabai -m rule --add app="^VLC$" manage=off
+
+yabai -m rule --add app="^Firefox" title="^Opening" manage=off
 
 yabai -m rule --add app="^Android Studio$" manage=off
 yabai -m rule --add app="^Simulator" manage=off
