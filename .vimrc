@@ -12,10 +12,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'mhinz/vim-startify'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-" Plug 'scrooloose/nerdtree'
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
-" Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 " Automatically install missing plugins on startup
@@ -146,6 +144,11 @@ let g:netrw_liststyle=3                                  " tree view
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 " }}}
+
+" vimwiki
+let g:vimwiki_list = [{'path': $WORKSPACE . '/wiki',
+	\ 'syntax': 'markdown',
+	\ 'ext': '.md'}]
 
 " Fuzzy find (unused) {{{
 "function! FuzzyOpen(command_str)
