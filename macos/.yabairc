@@ -52,6 +52,7 @@ yabai -m rule --add app="^System Preferences$" manage=off
 
 yabai -m rule --add app="^Archive Utility$" manage=off
 yabai -m rule --add app="^Cisco AnyConnect" manage=off
+yabai -m rule --add app="^GIMP" manage=off
 yabai -m rule --add app="^The Unarchiver$" manage=off
 yabai -m rule --add app="^VirtualBox$" manage=off
 yabai -m rule --add app="^VLC$" manage=off
