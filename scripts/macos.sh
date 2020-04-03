@@ -770,6 +770,14 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 # Disable signing emails by default
 defaults write ~/Library/Preferences/org.gpgtools.gpgmail SignNewEmailsByDefault -bool false
 
+
+###############################################################################
+# Xcode
+###############################################################################
+
+# Show build time for Xcode projects
+defaults write com.apple.dt.Xcode ShowBuildOperationDuration YES
+
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
