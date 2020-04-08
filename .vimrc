@@ -9,6 +9,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+Plug 'noahfrederick/vim-noctu'
 Plug 'mhinz/vim-startify'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -103,9 +104,6 @@ endif
 " Mappings {{{
 let mapleader=","                                        " Set leader to ,
 
-" Map jk to ESC
-inoremap jk <esc>
-
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
 " Turn off search highlighting
@@ -149,34 +147,6 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 let g:vimwiki_list = [{'path': $WORKSPACE . '/wiki',
 	\ 'syntax': 'markdown',
 	\ 'ext': '.md'}]
-
-" Fuzzy find (unused) {{{
-"function! FuzzyOpen(command_str)
-" Prevent files from opening in NERDTree buffer
-"return (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '') . a:command_str
-"endfunction
-
-"nnoremap <expr> <Leader>p FuzzyOpen(":e **/*")
-"nnoremap <expr> <Leader>v FuzzyOpen(":vsplit **/*")
-"nnoremap <expr> <Leader>s FuzzyOpen(":split **/*")
-" }}}
-
-" " NERDTree (unused) {{{
-" " autocmd vimenter * NERDTree                              " Open NERDTree when starting vim
-" " autocmd VimEnter * wincmd w                              " Move focus to next buffer on start
-
-" " https://github.com/scrooloose/nerdtree/issues#issue/21
-" " close NERDtree if its the last open buffer
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" " Toggle NERDTree with <Leader>f
-" nnoremap <Leader>f :NERDTreeToggle<CR>
-" let NERDTreeMinimalUI = 1                                " Cleanup NerdTree UI
-" let NERDTreeDirArrows = 1
-" let NERDTreeIgnore = ['bower_components', 'node_modules', '__pycache__']
-" " https://github.com/vim-airline/vim-airline/issues/271
-" let NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
-" }}}
 
 " Disable arrow keys
 noremap <Up> <NOP>
