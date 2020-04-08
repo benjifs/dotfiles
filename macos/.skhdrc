@@ -57,15 +57,15 @@ ctrl + alt - z : yabai -m display --focus prev || yabai -m display --focus next
 # ctrl + cmd - 2  : yabai -m window --display 2; yabai -m display --focus 2
 
 # send window to desktop and follow focus
-shift + alt - 1 : yabai -m window --space  1; yabai -m space --focus 1
-shift + alt - 2 : yabai -m window --space  2; yabai -m space --focus 2
-shift + alt - 3 : yabai -m window --space  3; yabao -m space --focus 3
-shift + alt - 4 : yabai -m window --space  3; yabao -m space --focus 4
-shift + alt - 5 : yabai -m window --space  3; yabao -m space --focus 5
-shift + alt - 6 : yabai -m window --space  3; yabao -m space --focus 6
-shift + alt - 7 : yabai -m window --space  3; yabao -m space --focus 7
-shift + alt - 8 : yabai -m window --space  3; yabao -m space --focus 8
-shift + alt - 9 : yabai -m window --space  3; yabao -m space --focus 9
+shift + alt - 1 : yabai -m window --space 1; yabai -m space --focus 1
+shift + alt - 2 : yabai -m window --space 2; yabai -m space --focus 2
+shift + alt - 3 : yabai -m window --space 3; yabao -m space --focus 3
+shift + alt - 4 : yabai -m window --space 4; yabao -m space --focus 4
+shift + alt - 5 : yabai -m window --space 5; yabao -m space --focus 5
+shift + alt - 6 : yabai -m window --space 6; yabao -m space --focus 6
+shift + alt - 7 : yabai -m window --space 7; yabao -m space --focus 7
+shift + alt - 8 : yabai -m window --space 8; yabao -m space --focus 8
+shift + alt - 9 : yabai -m window --space 9; yabao -m space --focus 9
 
 #
 # FLOAT
