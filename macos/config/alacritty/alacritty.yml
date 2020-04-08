@@ -103,7 +103,6 @@ tabspaces: 8
 font:
   # Normal (roman) font face
   normal:
-    #family: Fira Mono for Powerline
     family: Hack
     style: Regular
 
@@ -179,8 +178,6 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    #background: '0x1f1f1f'
-    #background: '0x0d0e16'
     background: '0x131415'
     foreground: '0xffffff'
 
@@ -204,7 +201,7 @@ colors:
   normal:
     black:   '0x262626'
     red:     '0xf55678'
-    green:   '0x56f583'
+    green:   '0x6ef596'
     yellow:  '0xf7f086'
     blue:    '0x71a8fe'
     magenta: '0xf27b92'
