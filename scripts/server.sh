@@ -51,6 +51,7 @@ if [[ -e "$HTTPD" ]]; then
 	sudo sed -i '' '/php[0-9]_module/s/^#//g' "$HTTPD"
 	sudo sed -i '' '/mod_vhost_alias/s/^#//g' "$HTTPD"
 	sudo sed -i '' '/httpd-vhosts.conf/s/^#//g' "$HTTPD"
+	sudo sed -i '' '/mod_rewrite/s/^#//g' "$HTTPD"
 fi
 
 NUMBER=`awk '/AllowOverride\ none/{ print NR; exit }' $HTTPD`
