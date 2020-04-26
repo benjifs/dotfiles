@@ -1,6 +1,22 @@
 # benji's dotfiles
 
-Moving things here for now. Trying out a new setup
+## Changelog
+### 04-2020
+* Generalizing things to be used between multiple systems
+* Add [links](local/bin/links) to link dotfiles
+* Add corresponding `*.links` files for all my setups
+
+---
+
+## Setup
+To only setup dotfiles, run the [links](local/bin/links) with the appropriate
+`*.links` file.
+
+```
+./local/bin/links -f void.links
+```
+
+---
 
 ## Docker
 This might not be the best way to do this but its a nice quick way to test out the basic dotfiles.

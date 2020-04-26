@@ -1,4 +1,3 @@
-
 # initialize autocomplete
 autoload -Uz compinit
 

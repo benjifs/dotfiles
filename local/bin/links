@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+now=$(date +"%Y.%m.%d.%H.%M.%S")
+BACKUP_DIR="$HOME/.dotfiles_backup/$now"
+
+usage() { echo "Usage: links [-f <FILENAME>]" 1>&2; exit 1; }
+
+missing() { echo "File not found"; usage; }
+
+link() {
+	DEST="${2/#\~/$HOME}" # fix ~ not expanding inside if statement
+
+	FILENAME="${1##*/}"
+	if [[ -e "$DEST" && ! -L "$DEST" ]]; then
+		mkdir -p "$BACKUP_DIR"
+		mv "$DEST" "$BACKUP_DIR/$FILENAME"
+		echo "$2 backed up"
+	fi
+	unlink "$DEST" > /dev/null 2>&1
+
+	printf "linking $FILENAME... "
+	ln -sfn "$1" "$DEST" > /dev/null 2>&1
+	printf "OK\n"
+}
+
+read_file() {
+	[ ! -f $1 ] && missing
+
+	while IFS=\= read -r LOC DEST; do
+		link "$(pwd)/$LOC" "$DEST"
+	done < $1
+
+	exit 0
+}
+
+while getopts ":f:h:" o; do
+	case "${o}" in
+		f)
+			read_file ${OPTARG}
+			;;
+		h)
+			usage
+			;;
+		*)
+			usage
+			;;
+	esac
+done
+
+usage
+

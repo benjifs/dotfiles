@@ -1,0 +1,13 @@
+alacritty=~/.config/alacritty
+config/aliases=~/.config/aliases
+config/exports=~/.config/exports
+config/macos_aliases=~/.config/macos_aliases
+git=~/.config/git
+gnupg=~/.gnupg
+skhd/skhdrc=~/.skhdrc
+tmux/tmux.conf=~/.tmux.conf
+vim/vim=~/.vim
+vim/vimrc=~/.vimrc
+yabai/yabairc=~/.yabairc
+zsh/zsh=~/.config/zsh
+zsh/zshrc=~/.zshrc

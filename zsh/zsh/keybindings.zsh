@@ -1,4 +1,3 @@
-
 # History search with up/down arrows
 # https://github.com/robbyrussell/oh-my-zsh/issues/1720
 autoload -U up-line-or-beginning-search
