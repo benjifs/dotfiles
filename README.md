@@ -5,16 +5,27 @@
 * Generalizing things to be used between multiple systems
 * Add [links](local/bin/links) to link dotfiles
 * Add corresponding `*.links` files for all my setups
+* Move macOS setup stuff to its own directory.
 
 ---
 
-## Setup
+## dotfiles setup
 To only setup dotfiles, run the [links](local/bin/links) with the appropriate
 `*.links` file.
 
 ```
 ./local/bin/links -f void.links
 ```
+
+## macOS setup
+To automate the macOS setup, use [run.sh](macos_setup/run.sh) which should go
+through the whole process of updating, installing files from
+[Brewfile](macos_setup/Brewfile). Optionally you can also run
+[server.sh](macos_setup/server.sh) to setup local web server for testing so
+directories under `~/workspace/` will be accessible from `*.test`. For example:
+`~/workspace/site` can be reached from `http://site.test`. Lastly, there is
+also an additional script to automatically map CAPS_LOCK to CTRL with 
+[map-caps-to-ctrl.sh](macos_setup/map-caps-to-ctrl.sh).
 
 ---
 
