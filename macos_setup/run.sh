@@ -7,8 +7,7 @@
 ###########################
 
 # Get current dir (so run this script from anywhere)
-export DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-export SCRIPTS="$DOTFILES_DIR/scripts"
+export SCRIPTS="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Includes helpers
 source "$SCRIPTS/helpers.sh"
@@ -22,11 +21,9 @@ if [ "$(uname -s)" == "Darwin" ]; then
 	. "$SCRIPTS/brew.sh"
 	. "$SCRIPTS/macos.sh"
 	. "$SCRIPTS/map-caps-to-ctrl.sh"
+	. "$SCRIPTS/postdots.sh"
 
-	success "Completed macOS scripts"
+	success "Setup complete"
+else
+	warn "Setup script is only for macOS"
 fi
-
-. "$SCRIPTS/links.sh"
-. "$SCRIPTS/postdots.sh"
-
-success "Setup complete"

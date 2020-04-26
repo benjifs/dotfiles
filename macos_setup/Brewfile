@@ -1,0 +1,93 @@
+# Brewfile
+
+# For firefox-nightly
+tap "homebrew/cask-versions"
+# For chunkwm, skhd, and yabai
+tap "koekeishiya/formulae"
+
+brew "ack"
+brew "coreutils"
+brew "curl"
+# brew "dnsmasq", restart_service: true
+brew "libevent"
+brew "findutils"
+brew "git"
+brew "gnu-sed"
+brew "moreutils"
+# brew "mysql", restart_service: true, link: false
+brew "ngrep"
+brew "p7zip"
+brew "python"
+brew "ruby"
+brew "telnet"
+brew "tmux"
+brew "tree"
+brew "unrar"
+brew "vim"
+brew "wget"
+brew "zsh"
+
+# JS Things
+# brew "n"
+brew "yarn"
+
+# GO Things
+brew "go"
+
+# Window Manager
+brew "skhd", restart_service: true
+brew "yabai", restart_service: true
+brew "jq"
+
+# GPG
+brew "gnupg"
+brew "pinentry-mac"
+
+# fun
+brew "cmatrix"
+brew "figlet"
+brew "fortune"
+brew "lolcat"
+brew "megatools"
+brew "mitmproxy"
+brew "neofetch"
+brew "nmap"
+
+# Testing
+brew "fff"
+brew "greed"
+
+# Casks
+cask "alacritty"
+# cask "android-file-transfer"
+# cask "android-studio"
+# cask "arduino"
+cask "balenaetcher"
+# cask "bettertouchtool"
+cask "bitbar"
+cask "brave-browser"
+# cask "calibre"
+# cask "cyberduck"
+# cask "discord"
+# cask "docker"
+# cask "dropbox"
+cask "firefox-nightly"
+# cask "gimp"
+cask "google-chrome"
+cask "insomnia"
+# cask "java"
+cask "keybase"
+cask "slack"
+# cask "spotify"
+# cask "steam"
+cask "the-unarchiver"
+cask "thunderbird"
+# cask "virtualbox"
+cask "visual-studio-code"
+cask "vlc"
+
+# Fonts
+tap "homebrew/cask-fonts"
+cask "font-fira-mono"
+cask "font-fira-mono-for-powerline"
+cask "font-hack"

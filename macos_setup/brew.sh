@@ -2,7 +2,6 @@
 
 # Get current dir (so run this script from anywhere)
 export SCRIPTS="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-export DOTFILES_DIR="$( cd "$( dirname "$SCRIPTS" )" && pwd )"
 
 # Include helpers
 source "$SCRIPTS/helpers.sh"
@@ -46,7 +45,7 @@ fi
 success "Homebrew initial setup complete"
 
 info "Running brew bundle"
-brew bundle --file=$DOTFILES_DIR/macos/Brewfile
+brew bundle --file=$SCRIPTS/Brewfile
 
 success "Homebrew apps installed"
 

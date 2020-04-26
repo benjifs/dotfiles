@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 # Modified from https://github.com/atomantic/dotfiles
 
-now=$(date +"%Y.%m.%d.%H.%M.%S")
-BACKUP_DIR="$HOME/.dotfiles_backup/$now"
-
 # Colors
 ESC_SEQ="\x1b["
 COL_RESET=$ESC_SEQ"0m"
@@ -40,35 +37,3 @@ fail() {
 		printf "${COL_RESET}${COL_RED}  ⇒${COL_RESET}    $1\n"
 	fi
 }
-
-link() {
-	filename="${1##*/}"
-	if [[ -e "$2" && ! -L "$2" ]]; then
-		mkdir -p "$BACKUP_DIR"
-		mv $2 "$BACKUP_DIR/$filename"
-		info "$filename backed up"
-	fi
-
-	unlink "$2" > /dev/null 2>&1
-	
-	running "linking $filename"
-	ln -sfn "$1" "$2" > /dev/null 2>&1
-	success
-}
-
-link_folder() {
-	[ ! -d "$1" ] && return
-
-	MATCH=${2:-".*"}
-	DEST=${3:-$HOME}
-	find "$1" -maxdepth 1 -mindepth 1 -name "$MATCH" | while read file; do
-		filename="${file##*/}"
-
-		if [[ "$file" == "." || "$file" == ".." || "$filename" == ".git" ]]; then
-			continue
-		fi
-		
-		link "$file" "$DEST/$filename"
-	done
-}
-

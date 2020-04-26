@@ -4,10 +4,10 @@
 # 	https://mallinson.ca/posts/5/the-perfect-web-development-environment-for-your-new-mac
 
 # Get current dir (so run this script from anywhere)
-export DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+export SCRIPTS="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Include helpers
-source "$DOTFILES_DIR/helpers.sh"
+source "$SCRIPTS/helpers.sh"
 
 info "Development server setup"
 
@@ -62,7 +62,7 @@ info "Setup virtual hosts"
 VHOSTS="/private/etc/apache2/extra/httpd-vhosts.conf"
 [[ -e "$VHOSTS" ]] && sudo mv "$VHOSTS" "$VHOSTS.backup"
 
-sudo cp "$DOTFILES_DIR/httpd-vhosts.conf" "$VHOSTS"
+sudo cp "$SCRIPTS/httpd-vhosts.conf" "$VHOSTS"
 sudo sed -i '' "s|{WORKSPACE}|${WORKSPACE}|g" "$VHOSTS"
 
 sudo apachectl start
