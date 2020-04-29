@@ -5,11 +5,11 @@ autoload -Uz compinit
 # https://carlosbecker.com/posts/speeding-up-zsh
 # Switched to prezto's implementation of zcompdump to work everywhere
 # https://github.com/sorin-ionescu/prezto
-_comp_files=(${ZDOTDIR:-$HOME}/.zcompdump(Nm-20))
+_comp_files=(${ZCACHE:-$HOME}/zcompdump)
 if (( $#_comp_files )); then
-	compinit -i -C
+	compinit -i -C -d ${ZCACHE:-$HOME}/zcompdump
 else
-	compinit -i
+	compinit -i -d ${ZCACHE:-$HOME}/zcompdump
 fi
 unset _comp_files
 
@@ -23,4 +23,3 @@ setopt menu_complete
 setopt auto_list # automatically list choices on ambiguous completion
 setopt auto_menu # automatically use menu completion
 setopt always_to_end # move cursor to end if word had one match
-
