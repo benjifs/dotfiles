@@ -24,5 +24,7 @@ export PATH="$HOME/.local/bin:$GOPATH/bin:$PATH";
 
 # Move things to .config
 export ZDOTDIR="$HOME/.config/zsh"
+# Set cache
+export ZCACHE="$HOME/.cache/zsh"
 
-[ ! -d $HOME/.cache/zsh ] && mkdir -p $HOME/.cache/zsh
+[ ! -d $ZCACHE ] && mkdir -p $ZCACHE
