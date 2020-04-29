@@ -30,3 +30,5 @@ alias path='echo -e ${PATH//:/\\n}'
 alias badge="tput bel"
 
 alias noderm="find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;"
+
+alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
