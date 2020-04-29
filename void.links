@@ -7,5 +7,5 @@ vim/vim=~/.vim
 vim/vimrc=~/.vimrc
 X/xinitrc=~/.xinitrc
 X/Xresources=~/.Xresources
-zsh/zsh=~/.config/zsh
-zsh/zshrc=~/.zshrc
+zsh=~/.config/zsh
+zsh/zprofile=~/.zprofile
