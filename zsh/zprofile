@@ -21,3 +21,8 @@ export GOPATH=$HOME/.go
 
 # Export path to include workspace scripts and Go
 export PATH="$HOME/.local/bin:$GOPATH/bin:$PATH";
+
+# Move things to .config
+export ZDOTDIR="$HOME/.config/zsh"
+
+[ ! -d $HOME/.cache/zsh ] && mkdir -p $HOME/.cache/zsh
