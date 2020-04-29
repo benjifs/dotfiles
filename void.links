@@ -1,5 +1,4 @@
 config/aliases=~/.config/aliases
-config/exports=~/.config/exports
 git=~/.config/git
 local/bin=~/.local/bin
 tmux=~/.config/tmux
