@@ -4,7 +4,6 @@ export ZSH=$HOME/.config/zsh
 export ZSH_THEME=bnj
 
 [ -f "$HOME/.config/aliases" ] && source "$HOME/.config/aliases"
-[ -f "$HOME/.config/exports" ] && source "$HOME/.config/exports"
 [ -f "$HOME/.config/macos_aliases" ] && source "$HOME/.config/macos_aliases"
 
 for file in $HOME/.config/zsh/*.zsh; do
