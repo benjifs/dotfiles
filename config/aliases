@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+alias history="history 1"
 alias vi="vim"
 
 # Detect which `ls` flavor is in use
