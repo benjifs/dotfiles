@@ -1,5 +1,7 @@
 config/aliases=~/.config/aliases
+dunst/dunstrc=~/.config/dunstrc
 git=~/.config/git
+gnupg/gpg-agent-void.conf=~/.gnupg/gpg-agent.conf
 local/bin=~/.local/bin
 tmux=~/.config/tmux
 vim/vim=~/.vim
