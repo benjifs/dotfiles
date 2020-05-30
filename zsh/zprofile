@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# To sign commits with GPG
-export GPG_TTY=$(tty)
-
 # Set workspace
 export WORKSPACE=$HOME/workspace
 
