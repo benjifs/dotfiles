@@ -2,7 +2,7 @@
 
 message=$(cat $1)
 
-types="build|ci|docs|feat|fix|patch|perf|refactor|style|test"
+types="build|ci|docs|feat|fix|merge|patch|perf|refactor|style|test"
 additional="(\n{2}(.+(\n)*)+)?"
 pattern="^($types)(\([[:alpha:]\-]+\))?: .+$additional"
 
