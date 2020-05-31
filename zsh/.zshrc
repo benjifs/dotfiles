@@ -6,8 +6,9 @@ export ZSH_THEME=bnj
 # To sign commits with GPG
 export GPG_TTY=$(tty)
 
-[ -f "$HOME/.config/aliases" ] && source "$HOME/.config/aliases"
-[ -f "$HOME/.config/macos_aliases" ] && source "$HOME/.config/macos_aliases"
+for alias in $HOME/.config/*aliases; do
+	[ -f "$alias" ] && source "$alias"
+done
 
 for file in $HOME/.config/zsh/*.zsh; do
 	source "$file"
