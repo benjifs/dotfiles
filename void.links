@@ -1,4 +1,5 @@
 config/aliases=~/.config/aliases
+config/void_aliases=~/.config/void_aliases
 dunst/dunstrc=~/.config/dunstrc
 git=~/.config/git
 gnupg/gpg-agent-void.conf=~/.gnupg/gpg-agent.conf
