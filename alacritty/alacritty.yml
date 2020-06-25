@@ -197,6 +197,11 @@ colors:
   #  text: '0x000000'
   #  cursor: '0xffffff'
 
+  # Selection colors
+  selection:
+    text: '0xffffff'
+    background: '0x464646'
+
   # Normal colors
   normal:
     black:   '0x262626'
