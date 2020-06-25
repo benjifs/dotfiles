@@ -1,0 +1,17 @@
+{
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "Sylveon",
+    "editor.insertSpaces": false,
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": "all",
+    "editor.renderLineHighlight": "all",
+    // "editor.formatOnSave": true,
+    "workbench.colorCustomizations": {
+
+    },
+    "editor.fontFamily": "Hack, Monaco, 'Courier New', monospace",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "explorer.openEditors.visible": 0,
+    "workbench.startupEditor": "newUntitledFile"
+}

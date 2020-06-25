@@ -8,6 +8,7 @@ skhd=~/.config/skhd
 tmux=~/.config/tmux
 vim/vim=~/.vim
 vim/vimrc=~/.vimrc
+vscode/settings.json=~/Library/Application Support/Code/User/settings.json
 yabai=~/.config/yabai
 zsh=~/.config/zsh
 zsh/zprofile=~/.zprofile
