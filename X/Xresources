@@ -1,0 +1,55 @@
+
+! st
+st.font:              curie:size=12
+st.bellvolume:        0
+st.borderpx:          10
+/* st.cursorblinkontype: 0 */
+/* st.cursorshape:       2 */
+st.shell:             /bin/zsh
+st.termname:          st-256color
+
+! dwm
+dwm.normbordercolor: #181818
+dwm.normbgcolor:     #131415
+dwm.normfgcolor:     #ffffff
+dwm.selbordercolor:  #464646
+dwm.selbgcolor:      #464646
+dwm.selfgcolor:      #71a8fe
+
+! Sylveon
+! special
+*.background:   #131415
+*.foreground:   #ffffff
+*.cursorColor:  #464646
+
+! black
+*.color0:       #262626
+*.color8:       #666666
+
+! red
+*.color1:       #f55678
+*.color9:       #f66e8b
+
+! green
+*.color2:       #6ef596
+*.color10:      #86f7a7
+
+! yellow
+*.color3:       #f7f086
+*.color11:      #f9f39e
+
+! blue
+*.color4:       #71a8fe
+*.color12:      #8ab8fe
+
+! magenta
+*.color5:       #f27b92
+*.color13:      #f492a5
+
+! cyan
+*.color6:       #56c7f5
+*.color14:      #6ecff6
+
+! white
+*.color7:       #ededed
+*.color15:      #fbfbfb

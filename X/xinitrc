@@ -1,0 +1,6 @@
+setxkbmap -option ctrl:nocaps
+xset r rate 225 50
+
+xrdb ~/.Xresources
+
+exec dwm

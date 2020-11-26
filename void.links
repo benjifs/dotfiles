@@ -1,0 +1,13 @@
+config/aliases=~/.config/aliases
+config/void_aliases=~/.config/void_aliases
+dunst/dunstrc=~/.config/dunstrc
+git=~/.config/git
+gnupg/gpg-agent-void.conf=~/.gnupg/gpg-agent.conf
+local/bin=~/.local/bin
+tmux=~/.config/tmux
+vim/vim=~/.vim
+vim/vimrc=~/.vimrc
+X/xinitrc=~/.xinitrc
+X/Xresources=~/.Xresources
+zsh=~/.config/zsh
+zsh/zprofile=~/.zprofile
