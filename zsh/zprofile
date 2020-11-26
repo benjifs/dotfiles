@@ -17,7 +17,7 @@ export MANPAGER='less -X';
 export GOPATH=$HOME/.go
 
 # Export path to include workspace scripts and Go
-export PATH="$HOME/.local/bin:$GOPATH/bin:$PATH";
+export PATH="/usr/local/sbin:$GOPATH/bin:$HOME/.local/bin:$PATH"
 
 # Move things to .config
 export ZDOTDIR="$HOME/.config/zsh"

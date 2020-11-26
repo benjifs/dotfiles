@@ -51,8 +51,10 @@ yabai -m rule --add app="^Installer$" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
 
 yabai -m rule --add app="^Archive Utility$" manage=off
+yabai -m rule --add app="^balenaEtcher$" manage=off
 yabai -m rule --add app="^Cisco AnyConnect" manage=off
 yabai -m rule --add app="^GIMP" manage=off
+yabai -m rule --add app="^MTGA$" manage=off
 yabai -m rule --add app="^The Unarchiver$" manage=off
 yabai -m rule --add app="VirtualBox" manage=off
 yabai -m rule --add app="^VLC$" manage=off
@@ -61,4 +63,5 @@ yabai -m rule --add app="^Firefox" title="^Opening" manage=off
 
 yabai -m rule --add app="^Android Studio$" manage=off
 yabai -m rule --add app="^Simulator" manage=off
+yabai -m rule --add app="^VPN Tracker" manage=off
 yabai -m rule --add app="^Xcode$" manage=off
