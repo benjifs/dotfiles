@@ -21,7 +21,7 @@ To only setup dotfiles, run the [links](local/bin/links) with the appropriate
 To automate the macOS setup, use [run.sh](macos_setup/run.sh) which should go
 through the whole process of updating, installing files from
 [Brewfile](macos_setup/Brewfile). Optionally you can also run
-[server.sh](macos_setup/server.sh) to setup local web server for testing so
+[mamp.sh](macos_setup/mamp.sh) to setup local web server for testing so
 directories under `~/workspace/` will be accessible from `*.test`. For example:
 `~/workspace/site` can be reached from `http://site.test`. Lastly, there is
 also an additional script to automatically map CAPS_LOCK to CTRL with 
