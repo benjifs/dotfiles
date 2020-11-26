@@ -68,3 +68,11 @@ sudo sed -i '' "s|{WORKSPACE}|${WORKSPACE}|g" "$VHOSTS"
 sudo apachectl start
 
 success "Apache setup complete"
+
+# MySQL
+info "Install MySQL"
+brew install mysql
+sudo brew services start mysql
+success "MySQL installed"
+
+success "MAMP setup complete"

@@ -8,13 +8,11 @@ tap "koekeishiya/formulae"
 brew "ack"
 brew "coreutils"
 brew "curl"
-# brew "dnsmasq", restart_service: true
 brew "libevent"
 brew "findutils"
 brew "git"
 brew "gnu-sed"
 brew "moreutils"
-# brew "mysql", restart_service: true, link: false
 brew "ngrep"
 brew "p7zip"
 brew "python"
@@ -26,6 +24,10 @@ brew "unrar"
 brew "vim"
 brew "wget"
 brew "zsh"
+
+# MAMP Things (see mamp.sh)
+# brew "dnsmasq", restart_service: true
+# brew "mysql", restart_service: true, link: false
 
 # JS Things
 # brew "n"
@@ -76,12 +78,13 @@ cask "firefox-nightly"
 cask "google-chrome"
 cask "insomnia"
 # cask "java"
-cask "keybase"
+# cask "keybase"
+cask "sequel-ace"
 cask "slack"
 # cask "spotify"
 # cask "steam"
 cask "the-unarchiver"
-cask "thunderbird"
+# cask "thunderbird"
 # cask "virtualbox"
 cask "visual-studio-code"
 cask "vlc"
@@ -91,3 +94,4 @@ tap "homebrew/cask-fonts"
 cask "font-fira-mono"
 cask "font-fira-mono-for-powerline"
 cask "font-hack"
+
