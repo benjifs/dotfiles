@@ -88,7 +88,7 @@ set foldnestmax=10                                       " 10 nested fold max
 set foldmethod=syntax                                    " Fold based on indent level
 " }}}
 
-" Backups, swaps and undos {{{
+" Info, backups, swaps, and undos {{{
 call system('mkdir ~/.vim')                              " Creating .vim directories if they dont exist
 call system('mkdir ~/.vim/backups')
 call system('mkdir ~/.vim/swaps')
@@ -98,6 +98,7 @@ set directory=~/.vim/swaps
 if exists("&undodir")
 	set undodir=~/.vim/undo
 endif
+set viminfo+=n~/.vim/viminfo
 " }}}
 
 " Mappings {{{
