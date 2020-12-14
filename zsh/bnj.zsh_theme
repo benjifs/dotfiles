@@ -1,5 +1,8 @@
 # bnj.zsh
 
+# Remove RPROMPT padding-right
+ZLE_RPROMPT_INDENT=0
+
 setopt prompt_subst
 autoload -U colors && colors
 
@@ -98,4 +101,3 @@ $BNJ_LINE_COLOR└─ \
 $BNJ_PROMPT_COLOR%(!.#.%%)$BNJ_TEXT_COLOR$BNJ_RESET_COLOR '
 
 RPROMPT='${vcs_info_msg_0_}$BNJ_RESET_COLOR'
-
