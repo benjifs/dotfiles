@@ -26,7 +26,7 @@ init() {
 }
 
 deploy() {
-	rsync -avH --exclude ".*" $1 -e ssh $2
+	rsync -avH --exclude={'.*','node_modules','src'} $1 -e ssh $2
 }
 
 if [ $# -eq 1 ] && [ $1 == "init" ]; then
