@@ -41,6 +41,7 @@ set nopaste                                              " Fix pasting from clip
 set splitbelow splitright                                " Split to right or below by default
 set scrolloff=10                                         " Start scrolling 10 lines from top or bottom
 set laststatus=2                                         " Always show the status line
+set modelines=0                                          " Turn off modelines
 " }}}
 
 " UI {{{
@@ -132,8 +133,8 @@ if has("autocmd")
 	filetype indent on                                                      " Enable file type indentation
 	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript    " Treat .json files as .js
 	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown              " Treat .md files as Markdown
+	autocmd FileType vim set foldmethod=marker                              " Change foldmethod for vim files to marker
 	autocmd FileType * setlocal formatoptions-=cro                          " Disable continuing comments on newline
 endif
 " }}}
 
-" vim: fdm=marker fmr={{{,}}}
