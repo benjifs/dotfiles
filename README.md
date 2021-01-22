@@ -3,14 +3,14 @@
 ## Changelog
 ### 04-2020
 * Generalizing things to be used between multiple systems
-* Add [links](local/bin/links) to link dotfiles
+* Add [`links`](local/bin/links) to link dotfiles
 * Add corresponding `*.links` files for all my setups
 * Move macOS setup stuff to its own directory.
 
 ---
 
 ## dotfiles setup
-To only setup dotfiles, run the [links](local/bin/links) with the appropriate
+To only setup dotfiles, run the [`./local/bin/links`](local/bin/links) [links](local/bin/links) with the appropriate
 `*.links` file.
 
 ```
@@ -18,7 +18,7 @@ To only setup dotfiles, run the [links](local/bin/links) with the appropriate
 ```
 
 ## macOS setup
-To automate the macOS setup, use [run.sh](macos_setup/run.sh) which should go
+To automate the macOS setup, use [`run.sh`](macos_setup/run.sh) which should go
 through the whole process of updating, installing files from
 [Brewfile](macos_setup/Brewfile). Optionally you can also run
 [mamp.sh](macos_setup/mamp.sh) to setup local web server for testing so
