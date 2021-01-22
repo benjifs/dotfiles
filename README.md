@@ -10,7 +10,7 @@
 ---
 
 ## dotfiles setup
-To only setup dotfiles, run the [`./local/bin/links`](local/bin/links) [links](local/bin/links) with the appropriate
+To only setup dotfiles, run the [`./local/bin/links`](local/bin/links) with the appropriate
 `*.links` file.
 
 ```
