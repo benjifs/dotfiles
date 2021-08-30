@@ -88,7 +88,7 @@ set foldmethod=syntax                                    " Fold based on indent 
 " }}}
 
 " Info, backups, swaps, and undos {{{
-set viminfo+=n~/.cache/vim/viminfo | call system('mkdir -p ~/.cache/vim')
+set viminfofile=~/.cache/vim/viminfo | call system('mkdir -p ~/.cache/vim')
 set backupdir=~/.cache/vim/backup  | call system('mkdir -p ~/.cache/vim/backup')
 set directory=~/.cache/vim/swaps   | call system('mkdir -p ~/.cache/vim/swaps')
 set undodir=~/.cache/vim/undo      | call system('mkdir -p ~/.cache/vim/undo')
