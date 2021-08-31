@@ -13,3 +13,7 @@ bindkey "^R" history-incremental-search-backward
 # Should work out of the box but sometimes
 # without this line it doesn't. Keeping for now
 bindkey \^u kill-whole-line
+
+# CTRL-A and CTRL-E fix for macOS
+bindkey \^a beginning-of-line
+bindkey \^e end-of-line
