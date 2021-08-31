@@ -13,13 +13,12 @@ else
 fi
 unset _comp_files
 
-zstyle ':completion:*' menu select
-zstyle ':completion:*' completer _complete _approximate _expand
+zstyle ':completion:*' menu select # Highlight current selection
+zstyle ':completion:*' completer _complete _expand
 zstyle ':completion:*:default' list-colors "${(@s.:.)LS_COLORS}"
-# zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
 
-setopt menu_complete
-# Testing
+setopt menu_complete # automatically select the first completion match
 setopt auto_list # automatically list choices on ambiguous completion
 setopt auto_menu # automatically use menu completion
 setopt always_to_end # move cursor to end if word had one match
