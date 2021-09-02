@@ -11,3 +11,18 @@
 
 [commit]
 	template = ~/.config/git/gitmessage
+
+[gpg]
+	program = /usr/local/bin/gpg
+
+# The following go together with `git/hooks/post-checkout`
+[user "ssh://git@github.com"]
+	# name = benji
+	# email = email
+	# signingkey = ABC123
+
+[user "ssh://git@gitlab.com"]
+
+[user "ssh://git@git.sr.ht"]
+
+[user "ssh://git-codecommit.*.amazonaws.com"]
