@@ -33,6 +33,15 @@
 #   email = user@xxxxxxx.com
 #
 
+CURRENT_GIT_NAME=$(git config --local user.name)
+CURRENT_GIT_EMAIL=$(git config --local user.email)
+
+# Only set the values for git config if they are not currently set
+if [[ -n "$CURRENT_GIT_NAME$CURRENT_GIT_EMAIL" ]]; then
+    echo "Local git config already initialized"
+    exit
+fi
+
 GIT_ORIGIN=$(git ls-remote --get-url 'origin')
 if [[ "$GIT_ORIGIN" =~ ^git@* ]]; then
     GIT_ORIGIN=${GIT_ORIGIN%:*}
@@ -43,17 +52,17 @@ GIT_NAME=$(git config --get-urlmatch user.name $GIT_ORIGIN)
 GIT_EMAIL=$(git config --get-urlmatch user.email $GIT_ORIGIN)
 GIT_KEY=$(git config --get-urlmatch user.signingkey $GIT_ORIGIN)
 if [[ -n "$GIT_NAME$GIT_EMAIL$GIT_KEY" ]]; then
-    echo "Initialize local .git/config"
+    echo "Initialize local git config"
 fi
-if [[ -n $GIT_NAME ]] ; then
+if [[ -n $GIT_NAME ]]; then
     echo "  name: $GIT_NAME"
     git config --local user.name "$GIT_NAME"
 fi
-if [[ -n $GIT_EMAIL ]] ; then
+if [[ -n $GIT_EMAIL ]]; then
     echo "  email: $GIT_EMAIL"
     git config --local user.email "$GIT_EMAIL"
 fi
-if [[ -n $GIT_KEY ]] ; then
+if [[ -n $GIT_KEY ]]; then
     echo "  signingkey: $GIT_KEY"
     git config --local user.signingkey "$GIT_KEY"
     git config --local commit.gpgsign true
