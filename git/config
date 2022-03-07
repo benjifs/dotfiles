@@ -6,6 +6,9 @@
 	excludesfile = ~/.config/git/gitignore
 	hookspath = ~/.config/git/hooks
 
+[init]
+	defaultBranch = main
+
 [color]
 	ui = auto
 
