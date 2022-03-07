@@ -1,9 +1,8 @@
 config/aliases=~/.config/aliases
 config/exports=~/.config/exports
-local/bin=~/.local/bin
+bin=~/.local/bin
 termux=~/.termux
 tmux/tmux.conf=~/.tmux.conf
-vim/vim=~/.vim
-vim/vimrc=~/.vimrc
+vim=~/.vim
 zsh/zsh=~/.config/zsh
 zsh/zshrc=~/.zshrc

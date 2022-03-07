@@ -2,16 +2,18 @@
 
 # For firefox-nightly
 tap "homebrew/cask-versions"
-# For chunkwm, skhd, and yabai
+# For yabai and skhd
 tap "koekeishiya/formulae"
 
 brew "ack"
 brew "coreutils"
 brew "curl"
-brew "libevent"
+brew "ffmpeg"
 brew "findutils"
 brew "git"
 brew "gnu-sed"
+brew "imagemagick"
+brew "irssi"
 brew "moreutils"
 brew "ngrep"
 brew "p7zip"
@@ -21,19 +23,25 @@ brew "telnet"
 brew "tmux"
 brew "tree"
 brew "unrar"
-brew "vim"
 brew "wget"
 brew "zsh"
+
+# VIM
+# brew "vim"
+brew "neovim"
 
 # MAMP Things (see mamp.sh)
 # brew "dnsmasq", restart_service: true
 # brew "mysql", restart_service: true, link: false
 
-# JS Things
-# brew "n"
-brew "yarn"
+# Swift
+brew "swiftlint"
 
-# GO Things
+# JS
+brew "n"
+# brew "yarn"
+
+# Go
 brew "go"
 
 # Window Manager
@@ -49,6 +57,7 @@ brew "pinentry-mac"
 brew "cmatrix"
 brew "figlet"
 brew "fortune"
+brew "greed"
 brew "lolcat"
 brew "megatools"
 brew "mitmproxy"
@@ -57,16 +66,14 @@ brew "nmap"
 
 # Testing
 brew "fff"
-brew "greed"
 
 # Casks
 cask "alacritty"
 # cask "android-file-transfer"
-# cask "android-studio"
+cask "android-studio"
 # cask "arduino"
 cask "balenaetcher"
 # cask "bettertouchtool"
-cask "bitbar"
 cask "brave-browser"
 # cask "calibre"
 # cask "cyberduck"
@@ -78,20 +85,19 @@ cask "firefox-nightly"
 cask "google-chrome"
 cask "insomnia"
 # cask "java"
+cask "keka"
 # cask "keybase"
 cask "sequel-ace"
 cask "slack"
 # cask "spotify"
 # cask "steam"
-cask "the-unarchiver"
-# cask "thunderbird"
+cask "thunderbird"
 # cask "virtualbox"
 cask "visual-studio-code"
 cask "vlc"
 
 # Fonts
 tap "homebrew/cask-fonts"
-cask "font-fira-mono"
 cask "font-fira-mono-for-powerline"
 cask "font-hack"
 

@@ -13,6 +13,7 @@ Plug 'noahfrederick/vim-noctu'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'tpope/vim-commentary'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " Automatically install missing plugins on startup
@@ -53,6 +54,7 @@ set numberwidth=2                                        " Keep the line number 
 set cursorline                                           " Highlight current line
 set ruler                                                " Show the cursor position
 set colorcolumn=80                                       " Draw line at column 80 to prevent going too far
+set tw=0                                                 " Prevent auto line break after column
 set showmatch                                            " Highlight matching [{()}]
 set list                                                 " Show invisible characters
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_,space:·             " Invisibles
@@ -88,7 +90,7 @@ set foldmethod=syntax                                    " Fold based on indent 
 " }}}
 
 " Info, backups, swaps, and undos {{{
-set viminfo+=n~/.cache/vim/viminfo | call system('mkdir -p ~/.cache/vim')
+set viminfofile=~/.cache/vim/viminfo | call system('mkdir -p ~/.cache/vim')
 set backupdir=~/.cache/vim/backup  | call system('mkdir -p ~/.cache/vim/backup')
 set directory=~/.cache/vim/swaps   | call system('mkdir -p ~/.cache/vim/swaps')
 set undodir=~/.cache/vim/undo      | call system('mkdir -p ~/.cache/vim/undo')
@@ -125,6 +127,14 @@ let g:netrw_altv=1                                       " open splits to the ri
 let g:netrw_liststyle=3                                  " tree view
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+" }}}
+
+" Test {{{
+" Autocomplete menu
+set complete+=kspell
+set completeopt=menuone,noinsert,noselect                " Show autocomplete if at least one match and dont autofill until user selects
+set shortmess+=c                                         " Dont show selection in autocomplete menun
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>" " Select from autocomplete with TAB
 " }}}
 
 " autocmd {{{

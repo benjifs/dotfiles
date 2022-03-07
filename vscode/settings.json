@@ -8,6 +8,7 @@
     "editor.renderLineHighlight": "all",
     "editor.scrollBeyondLastLine": false,
     "editor.wordWrap": "on",
+    "editor.rulers": [120],
     // "editor.formatOnSave": true,
     "workbench.colorCustomizations": {},
     "editor.fontFamily": "Hack, Monaco, 'Courier New', monospace",
@@ -16,7 +17,13 @@
     "explorer.openEditors.visible": 0,
     "workbench.startupEditor": "newUntitledFile",
     "[css]": {
-
         "editor.suggest.insertMode": "replace"
-    }
+    },
+    "editor.fontLigatures": false,
+    "javascript.suggest.autoImports": false,
+    "vim.useSystemClipboard": true,
+    "files.associations": {
+        "*.html": "html"
+    },
+    "diffEditor.ignoreTrimWhitespace": false
 }

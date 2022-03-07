@@ -25,3 +25,5 @@ export ZDOTDIR="$HOME/.config/zsh"
 export ZCACHE="$HOME/.cache/zsh"
 
 [ ! -d $ZCACHE ] && mkdir -p $ZCACHE
+
+export PATH="/usr/local/opt/ruby/bin:$PATH"

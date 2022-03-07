@@ -26,7 +26,8 @@ init() {
 }
 
 deploy() {
-	rsync -avH --exclude={'.*','node_modules','src'} $1 -e ssh $2
+	# Don't add spaces after the commas in the `exclude` or curly brace expansion could fail
+	rsync -avH --include '.htaccess' --exclude={'.*','node_modules','src','package*.json'} $1 -e ssh $2
 }
 
 if [ $# -eq 1 ] && [ $1 == "init" ]; then
