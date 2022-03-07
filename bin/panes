@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Modified from: https://github.com/alexesmet/dotfiles/blob/work/.local/bin/my-panes.sh
+
+f=3 b=4
+for j in f b; do
+  for i in {0..7}; do
+    printf -v $j$i %b "\e[${!j}${i}m"
+  done
+done
+
+brt=$'\e[2m'
+rst=$'\e[0m'
+
+cat << EOF
+${rst} 
+ ${f1}█████${brt}▄${rst}  ${f2}█████${brt}▄${rst}  ${f3}█████${brt}▄${rst}  ${f4}█████${brt}▄${rst}  ${f5}█████${brt}▄${rst}  ${f6}█████${brt}▄${rst}  ${f7}█████${brt}▄${rst}  
+ ${f1}█████${brt}█${rst}  ${f2}█████${brt}█${rst}  ${f3}█████${brt}█${rst}  ${f4}█████${brt}█${rst}  ${f5}█████${brt}█${rst}  ${f6}█████${brt}█${rst}  ${f7}█████${brt}█${rst}  
+ ${f1}█████${brt}█${rst}  ${f2}█████${brt}█${rst}  ${f3}█████${brt}█${rst}  ${f4}█████${brt}█${rst}  ${f5}█████${brt}█${rst}  ${f6}█████${brt}█${rst}  ${f7}█████${brt}█${rst}  
+ ${brt}${f1} ▀▀▀▀▀   ${f2}▀▀▀▀▀   ${f3}▀▀▀▀▀   ${f4}▀▀▀▀▀   ${f5}▀▀▀▀▀   ${f6}▀▀▀▀▀   ${f7}▀▀▀▀▀  
+EOF

@@ -20,5 +20,10 @@
         "editor.suggest.insertMode": "replace"
     },
     "editor.fontLigatures": false,
-    "vim.useSystemClipboard": true
+    "javascript.suggest.autoImports": false,
+    "vim.useSystemClipboard": true,
+    "files.associations": {
+        "*.html": "html"
+    },
+    "diffEditor.ignoreTrimWhitespace": false
 }
