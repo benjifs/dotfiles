@@ -1,4 +1,3 @@
-
 #!/usr/bin/env sh
 
 # Open Alacritty
@@ -84,11 +83,3 @@ shift + ctrl - a : yabai -m window --move rel:-20:0
 shift + ctrl - s : yabai -m window --move rel:0:20
 shift + ctrl - d : yabai -m window --move rel:20:0
 
-# monocle-style support
-# Set all windows on active space to zoom-fullscreen
-# alt - s : yabai -m query --windows --space \
-#           | jq -re '.[] | select(."zoom-fullscreen" == 1) | .id' \
-#           | xargs -I{} yabai -m window {} --toggle zoom-fullscreen \
-#           | yabai -m query --windows --space \
-#           | jq -re '.[] | select(."zoom-fullscreen" == 0) | .id' \
-#           | xargs -I{} yabai -m window {} --toggle zoom-fullscreen
