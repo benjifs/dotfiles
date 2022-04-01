@@ -15,21 +15,12 @@ alt - j : yabai -m window --focus south
 alt - k : yabai -m window --focus north
 alt - l : yabai -m window --focus east
 
-# swap managed window
-# shift + alt - h : yabai -m window --swap west
-# shift + alt - j : yabai -m window --swap south
-# shift + alt - k : yabai -m window --swap north
-# shift + alt - l : yabai -m window --swap east
-
 # move managed window
 shift + alt - h : yabai -m window --warp west
 shift + alt - j : yabai -m window --warp south
 shift + alt - k : yabai -m window --warp north
 shift + alt - l : yabai -m window --warp east
 
-#
-# WINDOW SIZE
-#
 # resize window
 shift + alt - w : yabai -m window south --resize top:0:-20 2> /dev/null || yabai -m window --resize top:0:-20
 shift + alt - a : yabai -m window west --resize right:-20:0 2> /dev/null || yabai -m window --resize right:-20:0
@@ -42,44 +33,15 @@ shift + alt - e : yabai -m window east --resize left:100:0 2> /dev/null || yabai
 # balance size of windows
 shift + alt - 0 : yabai -m space --balance
 
-#
-# MONITORS AND DESKTOPS
-#
 # focus monitor
 ctrl + alt - 1 : yabai -m display --focus 1
 ctrl + alt - 2 : yabai -m display --focus 2
 ctrl + alt - z : yabai -m display --focus prev || yabai -m display --focus next
 
-# send window to monitor and follow focus
-# ctrl + cmd - c  : yabai -m window --display next; yabai -m display --focus next
-# ctrl + cmd - 1  : yabai -m window --display 1; yabai -m display --focus 1
-# ctrl + cmd - 2  : yabai -m window --display 2; yabai -m display --focus 2
+# focus next/prev spaces (NEEDS SIP)
+#cmd + alt - z : yabai -m space --focus next || yabai -m space --focus first
+#cmd + alt - c : yabai -m space --focus prev || yabai -m space --focus last
 
-# send window to desktop and follow focus
-shift + alt - 1 : yabai -m window --space 1; yabai -m space --focus 1
-shift + alt - 2 : yabai -m window --space 2; yabai -m space --focus 2
-shift + alt - 3 : yabai -m window --space 3; yabai -m space --focus 3
-shift + alt - 4 : yabai -m window --space 4; yabai -m space --focus 4
-shift + alt - 5 : yabai -m window --space 5; yabai -m space --focus 5
-shift + alt - 6 : yabai -m window --space 6; yabai -m space --focus 6
-shift + alt - 7 : yabai -m window --space 7; yabai -m space --focus 7
-shift + alt - 8 : yabai -m window --space 8; yabai -m space --focus 8
-shift + alt - 9 : yabai -m window --space 9; yabai -m space --focus 9
-
-#
-# FLOAT
-#
 # float / unfloat window and center on screen
-shift + alt - space : yabai -m window --toggle float;\
-           yabai -m window --grid 1:1:0:0:1:1
-
-# make floating window fill screen
-shift + alt - z : yabai -m window --grid 1:1:0:0:1:1
-shift + alt - c : yabai -m window --grid 4:4:1:1:2:2
-
-# move floating window
-shift + ctrl - w : yabai -m window --move rel:0:-20
-shift + ctrl - a : yabai -m window --move rel:-20:0
-shift + ctrl - s : yabai -m window --move rel:0:20
-shift + ctrl - d : yabai -m window --move rel:20:0
+shift + alt - space : yabai -m window --toggle float; yabai -m window --grid 1:1:0:0:1:1
 
