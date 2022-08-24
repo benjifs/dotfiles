@@ -167,7 +167,7 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '0x131415'
+    background: '0x121213'
     foreground: '0xffffff'
 
     # Bright and dim foreground colors
@@ -189,30 +189,29 @@ colors:
   # Selection colors
   selection:
     text: '0xffffff'
-    background: '0x464646'
+    background: '0x262626'
 
   # Normal colors
   normal:
-    black:   '0x262626'
-    red:     '0xf55678'
-    green:   '0x6ef596'
-    yellow:  '0xf7f086'
-    blue:    '0x71a8fe'
-    magenta: '0xf27b92'
-    cyan:    '0x56c7f5'
-    white:   '0xededed'
+    black:      '0x262626'
+    red:        '0xf18895'
+    green:      '0x91f188'
+    yellow:     '0xe8f188'
+    blue:       '0x88c9f1'
+    magenta:    '0xf188b0'
+    cyan:       '0x88e5f1'
+    white:      '0x5f5f5f'
 
   # Bright colors
   bright:
-    black:   '0x666666'
-    red:     '0xf66e8b'
-    green:   '0x86f7a7'
-    yellow:  '0xf9f39e'
-    blue:    '0x8ab8fe'
-    magenta: '0xf492a5'
-    cyan:    '0x6ecff6'
-    white:   '0xfbfbfb'
-
+    black:      '0x666666'
+    red:        '0xf099a3'
+    green:      '0xa0f099'
+    yellow:     '0xe9f099'
+    blue:       '0x99cef0'
+    magenta:    '0xf099ba'
+    cyan:       '0x99e6f0'
+    white:      '0xfbfbfb'
   # Dim colors
   #
   # If the dim colors are not set, they will be calculated automatically based
