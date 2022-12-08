@@ -1,6 +1,5 @@
 # Basic zsh configuration
 
-export ZSH=$HOME/.config/zsh
 export ZSH_THEME=bnj
 
 # To sign commits with GPG
@@ -33,3 +32,14 @@ if [ "$TERM" = "linux" ]; then
 	printf "\033]Pe6ecff6"
 	printf "\033]Pfffffff"
 fi
+
+# Need to add these to PATH in .zshrc
+# otherwise, default values get prepended
+# which ignores these
+if type brew &>/dev/null; then
+	export PATH="$(brew --prefix)/opt/ruby/bin:$PATH"
+fi
+
+# Go
+# export GOPATH=$HOME/.go
+# export PATH="$GOPATH/bin:$PATH"

@@ -1,0 +1,54 @@
+# Sylveon theme
+# https://github.com/benjifs/sylveon
+
+colors:
+  primary:
+    background: '#131415'
+    foreground: '#ffffff'
+  cursor:
+    text: CellBackground
+    cursor: CellForeground
+  vi_mode_cursor:
+    text: CellBackground
+    cursor: CellForeground
+  search:
+    matches:
+      foreground: '#131415'
+      background: '#a2f6aa'
+    focused_match:
+      foreground: '#131415'
+      background: '#a2d6f6'
+  footer_bar:
+    foreground: '#131415'
+    background: '#fbfbfb'
+  hints:
+    start:
+      foreground: '#131415'
+      background: '#f4e985'
+    end:
+      foreground: '#f4e985'
+      background: '#131415'
+  line_indicator:
+    foreground: None
+    background: None
+  selection:
+    text: CellForeground
+    background: '#2a2b2c'
+  normal:
+    black: '#2a2b2c'
+    red: '#f48596'
+    green: '#85f490'
+    yellow: '#f4e985'
+    blue: '#85caf4'
+    magenta: '#f485b0'
+    cyan: '#85e4f4'
+    white: '#fbfbfb'
+  bright:
+    black: '#595a5b'
+    red: '#f6a2ae'
+    green: '#a2f6aa'
+    yellow: '#f6eea2'
+    blue: '#a2d6f6'
+    magenta: '#f6a2c2'
+    cyan: '#a2eaf6'
+    white: '#ffffff'

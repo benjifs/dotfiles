@@ -1,6 +1,8 @@
 [alias]
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	# Init config
+	ic = "!$HOME/.config/git/hooks/post-checkout"
 
 [core]
 	excludesfile = ~/.config/git/gitignore
@@ -13,6 +15,7 @@
 	ui = auto
 
 [commit]
+	gpgSign = true
 	template = ~/.config/git/gitmessage
 
 [gpg]

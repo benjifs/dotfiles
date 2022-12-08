@@ -10,4 +10,4 @@ vim=~/.vim
 vscode/settings.json=~/Library/Application Support/Code/User/settings.json
 yabai=~/.config/yabai
 zsh=~/.config/zsh
-zsh/zprofile=~/.zprofile
+zsh/zshenv=~/.zshenv

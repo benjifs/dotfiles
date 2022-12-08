@@ -14,8 +14,4 @@ setopt inc_append_history         # add commands to HISTFILE in order of executi
 setopt share_history              # share command history data
 
 # Load theme or use default theme
-if [ -f "$ZSH/$ZSH_THEME.zsh_theme" ]; then
-	source "$ZSH/$ZSH_THEME.zsh_theme"
-else
-	source "$ZSH/bnj-min.zsh_theme"
-fi
+[ -f "$ZDOTDIR/${ZSH_THEME:-bnj-min}.zsh_theme" ] && source "$ZDOTDIR/${ZSH_THEME:-bnj-min}.zsh_theme"

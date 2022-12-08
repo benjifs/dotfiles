@@ -36,5 +36,8 @@ alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
 
 alias wget="wget --hsts-file $HOME/.cache/wget-hsts"
 
+# Don't use this much but its fun (https://www.cyberciti.biz/faq/linux-unix-generating-passwords-command/)
+alias passgen="LC_ALL=C tr -dc A-Za-z0-9_ < /dev/urandom | head -c 16 | xargs"
+
 # To deal with "unknown terminal type" issues
 alias ssh='TERM=xterm-256color ssh'

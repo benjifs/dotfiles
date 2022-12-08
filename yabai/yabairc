@@ -23,9 +23,10 @@ yabai -m config window_gap                   15
 # rules
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Digital Colou?r Meter$" manage=off
-yabai -m rule --add app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
+yabai -m rule --add app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref|Trash)" manage=off
 yabai -m rule --add app="^Installer$" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="System Information" title="About This Mac" manage=off
 
 yabai -m rule --add app="^Archive Utility$" manage=off
@@ -46,4 +47,3 @@ yabai -m rule --add app="^Xcode$" manage=off
 
 yabai -m rule --add app="^Runner" manage=off
 yabai -m rule --add app="^IntelliJ" title!=".*\[(.*)\].*" manage=off
-

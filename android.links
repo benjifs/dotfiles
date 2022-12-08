@@ -5,4 +5,4 @@ termux=~/.termux
 tmux/tmux.conf=~/.tmux.conf
 vim=~/.vim
 zsh/zsh=~/.config/zsh
-zsh/zshrc=~/.zshrc
+zsh/zshenv=~/.zshenv
