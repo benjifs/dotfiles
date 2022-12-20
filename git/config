@@ -15,7 +15,7 @@
 	ui = auto
 
 [commit]
-	gpgSign = true
+	gpgsign = true
 	template = ~/.config/git/gitmessage
 
 [gpg]
