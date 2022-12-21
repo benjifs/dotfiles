@@ -1,2 +1,2 @@
-require('conf')
-require('pkg')
+require('benji.core')
+require('benji.packer')
