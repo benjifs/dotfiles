@@ -1,2 +1,2 @@
 require('benji.core')
-require('benji.packer')
+require('benji.lazy')
