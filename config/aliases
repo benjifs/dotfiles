@@ -38,4 +38,4 @@ alias wget="wget --hsts-file $HOME/.cache/wget-hsts"
 alias passgen="LC_ALL=C tr -dc A-Za-z0-9_ < /dev/urandom | head -c 16 | xargs"
 
 # To deal with "unknown terminal type" issues
-#alias ssh='TERM=xterm-256color ssh'
+alias ssh='TERM=xterm-256color ssh'
