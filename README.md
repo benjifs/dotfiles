@@ -1,6 +1,9 @@
 # benji's dotfiles
 
 ## Changelog
+### 2022
+* Updating to nvim
+
 ### 04-2020
 * Generalizing things to be used between multiple systems
 * Add [`links`](local/bin/links) to link dotfiles

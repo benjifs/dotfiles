@@ -13,6 +13,9 @@ else
 fi
 unset _comp_files
 
+zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion::complete:*' cache-path $ZCACHE
+
 zstyle ':completion:*' menu select # Highlight current selection
 zstyle ':completion:*' completer _complete _expand
 zstyle ':completion:*:default' list-colors "${(@s.:.)LS_COLORS}"

@@ -1,13 +1,13 @@
 alacritty=~/.config/alacritty
+bin=~/.local/bin
 config/aliases=~/.config/aliases
 config/macos_aliases=~/.config/macos_aliases
 git=~/.config/git
 gnupg/gpg-agent-macos.conf=~/.gnupg/gpg-agent.conf
-bin=~/.local/bin
+nvim=~/.config/nvim
 skhd=~/.config/skhd
 tmux=~/.config/tmux
-vim=~/.vim
 vscode/settings.json=~/Library/Application Support/Code/User/settings.json
 yabai=~/.config/yabai
 zsh=~/.config/zsh
-zsh/zprofile=~/.zprofile
+zsh/zshenv=~/.zshenv

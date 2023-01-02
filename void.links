@@ -9,4 +9,4 @@ vim=~/.vim
 X/xinitrc=~/.xinitrc
 X/Xresources=~/.Xresources
 zsh=~/.config/zsh
-zsh/zprofile=~/.zprofile
+zsh/zshenv=~/.zshenv

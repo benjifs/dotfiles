@@ -25,5 +25,7 @@
     "files.associations": {
         "*.html": "html"
     },
-    "diffEditor.ignoreTrimWhitespace": false
+    "files.trimTrailingWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "terminal.integrated.enableMultiLinePasteWarning": false
 }

@@ -1,0 +1,36 @@
+#!/usr/bin/env zsh
+# Moving contents of .zprofile to .zshenv
+# because SHELL_SESSIONS_DISABLE needs to be set in zshenv
+# The order in which zsh startup files are run is:
+# .zshenv → .zprofile → .zshrc → .zlogin → .zlogout
+
+# zshenv needs to be symlinked to $XDG_CONFIG_HOME/.zshenv so that zsh knows where its configs are
+
+[ -z "$XDG_CONFIG_HOME" ] && export XDG_CONFIG_HOME="$HOME/.config"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+
+[ -z "$XDG_CACHE_HOME" ] && export XDG_CACHE_HOME="$HOME/.cache"
+export ZCACHE="$XDG_CACHE_HOME/zsh"
+
+# Create {.config,.cache}/zsh directories if they dont exist
+[ ! -d $ZDOTDIR ] && mkdir -p $ZDOTDIR
+[ ! -d $ZCACHE ] && mkdir -p $ZCACHE
+
+# Set workspace
+export WORKSPACE=$HOME/workspace
+
+# Make vim the default editor.
+export EDITOR=nvim
+
+# Prefer US English and use UTF-8.
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# Don't clear the screen after quitting a manual page.
+export MANPAGER='less -X';
+
+export PATH="/usr/local/sbin:$HOME/.local/bin:$PATH"
+
+# Disable .zsh_sessions
+# https://superuser.com/a/1610999
+export SHELL_SESSIONS_DISABLE=1

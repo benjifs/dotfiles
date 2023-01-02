@@ -30,3 +30,10 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 
 # PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
 alias plistbuddy="/usr/libexec/PlistBuddy"
+
+# PGP sign and copy
+pgpsign() {
+	# Make sure `default-key` is set in `~/.gnupg/gpg.conf`
+	# `gpg --list-secret-keys`
+	echo "$1" | gpg --clearsign | pbcopy
+}
