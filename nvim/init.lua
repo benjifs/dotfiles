@@ -1,2 +1,1 @@
-require('benji.core')
-require('benji.lazy')
+require('benji.config')
