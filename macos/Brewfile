@@ -73,7 +73,7 @@ brew "youtube-dl"
 brew "bottom" # btm
 
 # Casks
-cask "alacritty"
+cask "alacritty", args: {"no-quarantine": true}
 cask "android-file-transfer"
 cask "android-studio"
 # cask "arduino"
