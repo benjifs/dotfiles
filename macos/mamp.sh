@@ -25,13 +25,14 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 success
 
+BREW="$(brew --prefix)"
+
+# dnsmasq
 info "Installing and setting up dnsmasq"
 brew install dnsmasq
-
-BREW="$(brew --prefix)"
 DNSMASQ="$(brew --prefix dnsmasq)"
 
-[[ ! -d "$BREW/etc" ]] && mkdir "$BREW/etc"
+[[ ! -d "$BREW/etc" ]] && mkdir -p "$BREW/etc"
 echo 'address=/.test/127.0.0.1' > "$BREW/etc/dnsmasq.conf"
 
 sudo brew services start dnsmasq
@@ -41,38 +42,63 @@ sudo bash -c 'echo "nameserver 127.0.0.1" > /etc/resolver/test'
 
 success "Finished dnsmasq setup"
 
-# Apache
-info "Setup Apache"
-HTTPD="/private/etc/apache2/httpd.conf"
-
-[[ -e "$HTTPD" ]] && sudo cp "$HTTPD" "$HTTPD.backup"
-
-if [[ -e "$HTTPD" ]]; then
-	sudo sed -i '' '/php[0-9]_module/s/^#//g' "$HTTPD"
-	sudo sed -i '' '/mod_vhost_alias/s/^#//g' "$HTTPD"
-	sudo sed -i '' '/httpd-vhosts.conf/s/^#//g' "$HTTPD"
-	sudo sed -i '' '/mod_rewrite/s/^#//g' "$HTTPD"
-fi
-
-NUMBER=`awk '/AllowOverride\ none/{ print NR; exit }' $HTTPD`
-END=$((NUMBER+1))
-sudo sed -i '' -e "${NUMBER},${END}s/^/#/" "$HTTPD"
-
-info "Setup virtual hosts"
-VHOSTS="/private/etc/apache2/extra/httpd-vhosts.conf"
-[[ -e "$VHOSTS" ]] && sudo mv "$VHOSTS" "$VHOSTS.backup"
-
-sudo cp "$SCRIPTS/httpd-vhosts.conf" "$VHOSTS"
-sudo sed -i '' "s|{WORKSPACE}|${WORKSPACE}|g" "$VHOSTS"
-
-sudo apachectl start
-
-success "Apache setup complete"
-
 # MySQL
 info "Install MySQL"
 brew install mysql
 sudo brew services start mysql
 success "MySQL installed"
 
+# PHP
+info "Install PHP@8.0"
+brew tap shivammathur/php
+brew install shivammathur/php/php@8.0
+brew unlink php
+brew link — overwrite — force php@8.0
+success "PHP@8.0 installed"
+
+# Apache
+info "Setup Apache"
+
+info "Stop apachectl"
+sudo apachectl stop
+sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist 2>/dev/null
+
+info "Install httpd"
+brew install httpd
+HTTPD="$BREW/etc/httpd/httpd.conf"
+
+[[ -e "$HTTPD" ]] && cp "$HTTPD" "$HTTPD.backup"
+
+if [[ -e "$HTTPD" ]]; then
+	sed -i '' 's/Listen 8080/Listen 80/g' "$HTTPD"
+	sed -i '' "s|\"/usr/local/var/www\"|\"${WORKSPACE}\"|g" "$HTTPD"
+	sed -i '' 's/AllowOverride None/AllowOverride All/g' "$HTTPD"
+	sed -i '' '/mod_rewrite/s/^#//g' "$HTTPD"
+	sed -i '' "s|User _www|User $(whoami)|g" "$HTTPD"
+	sed -i '' "s|Group _www|Group $(id -gn)|g" "$HTTPD"
+	if ! grep -wq "ServerName localhost" "$HTTPD"; then
+		sed -i '' '/#ServerName/s/$/\nServerName localhost/g' "$HTTPD"
+	fi
+	if ! grep -wq "php_module" "$HTTPD"; then
+		NUMBER=`awk '/^LoadModule/{n=NR}END{print n}' $HTTPD`
+		sed -i '' -e "${NUMBER}s|$|\nLoadModule php_module $(brew --prefix php@8.0)/lib/httpd/modules/libphp.so|" "$HTTPD"
+	fi
+	sed -i '' 's/DirectoryIndex index.html/DirectoryIndex index.php index.html/g' "$HTTPD"
+	sed -i '' '/mod_deflate/s/^#//g' "$HTTPD"
+	sed -i '' '/mod_vhost_alias/s/^#//g' "$HTTPD"
+	sed -i '' '/httpd-vhosts.conf/s/^#//g' "$HTTPD"
+fi
+
+info "Setup virtual hosts"
+VHOSTS="$BREW/etc/httpd/extra/httpd-vhosts.conf"
+[[ -e "$VHOSTS" ]] && mv "$VHOSTS" "$VHOSTS.backup"
+
+cp "$SCRIPTS/httpd-vhosts.conf" "$VHOSTS"
+sed -i '' "s|{WORKSPACE}|${WORKSPACE}|g" "$VHOSTS"
+
+brew services start httpd
+
+success "Apache setup complete"
+
 success "MAMP setup complete"
+info "Restart might be needed for configs to work correctly"
