@@ -25,21 +25,21 @@ return {
             lsp.ensure_installed({
                 'tsserver',
                 'eslint',
-                'sumneko_lua',
+                'lua_ls',
             })
             -- Configure lua language server for neovim
             lsp.nvim_workspace()
 
             -- Fix Undefined global 'vim'
-            lsp.configure('sumneko_lua', {
-                settings = {
-                    Lua = {
-                        diagnostics = {
-                            globals = { 'vim' }
-                        }
-                    }
-                }
-            })
+            -- lsp.configure('lua_ls', {
+            --     settings = {
+            --         Lua = {
+            --             diagnostics = {
+            --                 globals = { 'vim' }
+            --             }
+            --         }
+            --     }
+            -- })
 
             local cmp = require('cmp')
             local cmp_select = { behavior = cmp.SelectBehavior.Select }
