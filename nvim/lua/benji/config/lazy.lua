@@ -12,7 +12,7 @@ end
 vim.opt.runtimepath:prepend(lazypath)
 
 require('lazy').setup('benji.plugins', {
-    defaults = { version = '*' },
+    defaults = { version = false },
     install = { colorscheme = { 'rose-pine' } },
     checker = { enabled = true },
     performance = {

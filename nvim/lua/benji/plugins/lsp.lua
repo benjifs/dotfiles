@@ -1,89 +1,37 @@
 return {
-    {
-        'VonHeikemen/lsp-zero.nvim',
-        dependencies = {
-            -- LSP Support
-            'neovim/nvim-lspconfig',
-            'williamboman/mason.nvim',
-            'williamboman/mason-lspconfig.nvim',
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v2.x',
+    dependencies = {
+        -- LSP Support
+        {'neovim/nvim-lspconfig'},             -- Required
+        {'williamboman/mason.nvim'},           -- Optional
+        {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
-            -- Autocompletion
-            'hrsh7th/nvim-cmp',
-            'hrsh7th/cmp-buffer',
-            'hrsh7th/cmp-path',
-            'saadparwaiz1/cmp_luasnip',
-            'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-nvim-lua',
+        -- Autocompletion
+        {'hrsh7th/nvim-cmp'},     -- Required
+        {'hrsh7th/cmp-nvim-lsp'}, -- Required
+        {'L3MON4D3/LuaSnip'},     -- Required
+    },
+    config = function()
+        local lsp = require('lsp-zero').preset({})
 
-            -- Snippets
-            'L3MON4D3/LuaSnip',
-            'rafamadriz/friendly-snippets',
-        },
-        config = function()
-            local lsp = require('lsp-zero')
-            lsp.preset('recommended')
-            lsp.ensure_installed({
-                'tsserver',
-                'eslint',
-                'lua_ls',
-            })
-            -- Configure lua language server for neovim
-            lsp.nvim_workspace()
+        lsp.preset('recommended')
 
-            -- Fix Undefined global 'vim'
-            -- lsp.configure('lua_ls', {
-            --     settings = {
-            --         Lua = {
-            --             diagnostics = {
-            --                 globals = { 'vim' }
-            --             }
-            --         }
-            --     }
-            -- })
+        lsp.ensure_installed({
+            'lua_ls',
+        })
 
-            local cmp = require('cmp')
-            local cmp_select = { behavior = cmp.SelectBehavior.Select }
-            local cmp_mappings = lsp.defaults.cmp_mappings({
-                ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-                ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-                ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-                ["<C-Space>"] = cmp.mapping.complete(),
-            })
-            lsp.setup_nvim_cmp({
-                mapping = cmp_mappings
-            })
+        lsp.on_attach(function(client, bufnr)
+            lsp.default_keymaps({buffer = bufnr})
+        end)
 
-            lsp.set_preferences({
-                suggest_lsp_servers = false,
-                sign_icons = {
-                    error = 'E',
-                    warn = 'W',
-                    hint = 'H',
-                    info = 'I'
-                }
-            })
+        -- When you don't have mason.nvim installed
+        -- You'll need to list the servers installed in your system
+        lsp.setup_servers({'tsserver', 'eslint'})
 
-            lsp.on_attach(function(client, bufnr)
-                local opts = { buffer = bufnr, remap = false }
+        -- (Optional) Configure lua language server for neovim
+        require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
-                if client.name == "eslint" then
-                    vim.cmd.LspStop('eslint')
-                    return
-                end
-
-                vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-                vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-                vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
-                vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
-                vim.keymap.set("n", "[d", vim.diagnostic.goto_next, opts)
-                vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, opts)
-                vim.keymap.set("n", "<leader>vca", vim.lsp.buf.code_action, opts)
-                vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, opts)
-                vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename, opts)
-                vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
-            end)
-
-            lsp.setup()
-        end
-    }
+        lsp.setup()
+    end
 }
