@@ -27,5 +27,7 @@
     },
     "files.trimTrailingWhitespace": true,
     "diffEditor.ignoreTrimWhitespace": false,
-    "terminal.integrated.enableMultiLinePasteWarning": false
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "Lua.telemetry.enable": false,
+    "editor.semanticTokenColorCustomizations": {}
 }
