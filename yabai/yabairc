@@ -46,4 +46,4 @@ yabai -m rule --add app="^VPN Tracker" manage=off
 yabai -m rule --add app="^Xcode$" manage=off
 
 yabai -m rule --add app="^Runner" manage=off
-yabai -m rule --add app="^IntelliJ" title!=".*\[(.*)\].*" manage=off
+yabai -m rule --add app="^IntelliJ" manage=off

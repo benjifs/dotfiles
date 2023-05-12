@@ -30,3 +30,12 @@ if [[ $yn =~ ^([yY][eE][sS]|[yY])$ ]];then
 else
 	info "Skipped git setup"
 fi
+
+read -r -p "Would you like to run yabai and skhd on startup? " yn
+if [[ $yn =~ ^([yY][eE][sS]|[yY])$ ]];then
+	yabai --start-service
+	skhd --start-service
+	success
+else
+	info "Skipped yabai/skhd setup"
+fi
