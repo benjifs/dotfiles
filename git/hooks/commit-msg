@@ -14,7 +14,7 @@ echo "Invalid commit message
 
 Please follow a commit message that follows this format:
 
-<type>[optional scope]: <description>
+<type>([optional scope]): <description>
 
 [optional body]
 

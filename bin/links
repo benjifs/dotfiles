@@ -48,4 +48,3 @@ while getopts ":f:h:" o; do
 done
 
 usage
-

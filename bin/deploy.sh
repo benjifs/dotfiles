@@ -3,14 +3,16 @@
 # example:
 #           deploy.sh . VPS:/path/to/directory/.
 
-help() {
-	echo "do something here"
+usage() {
+	echo "Options:"
+	echo "    deploy.sh init"
+	echo "    deploy.sh /local/dir REMOTE:/remote/dir"
+	exit 1
 }
 
 invalid() {
-	echo ".dply does not exist"
-	echo "deploy.sh init"
-	exit 1
+	echo -e "ERROR: $1\n"
+	usage
 }
 
 init() {
@@ -19,10 +21,12 @@ init() {
 		echo "  LOCAL_SITE" >> .dply
 		echo "  REMOTE_SITE" >> .dply
 		echo ")" >> .dply
+		echo ".dply file created successfully"
+		echo "Edit values for LOCAL_SITE and REMOTE_SITE"
 	else
 		echo ".dply already exists"
-		exit 1
 	fi
+	exit 1
 }
 
 deploy() {
@@ -32,20 +36,19 @@ deploy() {
 
 if [ $# -eq 1 ] && [ $1 == "init" ]; then
 	init
-	exit
 elif [ ! -f .dply ] && [ $# -ne 2 ]; then
-	invalid
-	exit 1
+	invalid ".dply does not exist"
 fi
 
 if [ $# -eq 2 ]; then
 	deploy $1 $2
 else
 	source $(pwd)/.dply
-	if [ -v DPLY_PARAMS ]; then
-		deploy ${DPLY_PARAMS[0]} ${DPLY_PARAMS[1]}
+	if [ -z "$DPLY_PARAMS" ]; then
+		usage
+	elif [ "${DPLY_PARAMS[0]}" == "LOCAL_SITE" ] || [ "${DPLY_PARAMS[1]}" == "REMOTE_SITE" ]; then
+		invalid ".dply params not set"
 	else
-		invalid
+		deploy ${DPLY_PARAMS[0]} ${DPLY_PARAMS[1]}
 	fi
 fi
-
