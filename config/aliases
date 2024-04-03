@@ -32,7 +32,8 @@ alias badge="tput bel"
 
 alias noderm="find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;"
 
-alias wget="wget --hsts-file $HOME/.cache/wget-hsts"
+# Use XDG_CONFIG_HOME and XDG_CACHE_HOME if its not supported by default
+alias wget="wget --hsts-file $XDG_CACHE_HOME/wget-hsts"
 
 # Don't use this much but its fun (https://www.cyberciti.biz/faq/linux-unix-generating-passwords-command/)
 alias passgen="LC_ALL=C tr -dc A-Za-z0-9_ < /dev/urandom | head -c 16 | xargs"

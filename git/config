@@ -1,8 +1,8 @@
 [alias]
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-	# Init config
-	ic = "!$HOME/.config/git/hooks/post-checkout"
+	# Random commit message
+	rc = !git commit -m \"wip: $(curl -s https://whatthecommit.com/index.txt)\"
 
 [core]
 	excludesfile = ~/.config/git/gitignore
@@ -21,14 +21,14 @@
 [gpg]
 	program = /usr/local/bin/gpg
 
-# The following go together with `git/hooks/post-checkout`
-[user "ssh://git@github.com"]
-	# name = benji
-	# email = email
-	# signingkey = ABC123
+[includeIf "hasconfig:remote.*.url:git@github.com:*/**"]
+	path = ~/.config/git/config-github
 
-[user "ssh://git@gitlab.com"]
+[includeIf "hasconfig:remote.*.url:git@gitlab.com:*/**"]
+	path = ~/.config/git/config-gitlab
 
-[user "ssh://git@git.sr.ht"]
+[includeIf "hasconfig:remote.*.url:git@git.sr.ht:*/**"]
+	path = ~/.config/git/config-srht
 
-[user "ssh://git-codecommit.*.amazonaws.com"]
+[includeIf "hasconfig:remote.*.url:git-codecommit.*.amazonaws.com:*/**"]
+	path = ~/.config/git/config-aws
