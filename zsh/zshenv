@@ -5,7 +5,6 @@
 # .zshenv → .zprofile → .zshrc → .zlogin → .zlogout
 
 # zshenv needs to be symlinked to $XDG_CONFIG_HOME/.zshenv so that zsh knows where its configs are
-
 [ -z "$XDG_CONFIG_HOME" ] && export XDG_CONFIG_HOME="$HOME/.config"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
@@ -29,7 +28,7 @@ export LC_ALL=en_US.UTF-8
 # Don't clear the screen after quitting a manual page.
 export MANPAGER='less -X';
 
-export PATH="/usr/local/sbin:$HOME/.local/bin:$PATH"
+export PATH="/usr/local/sbin:$HOME/.local/bin:/usr/local/opt/python@3.12/libexec/bin:$PATH"
 
 # Disable .zsh_sessions
 # https://superuser.com/a/1610999

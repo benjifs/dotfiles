@@ -45,16 +45,16 @@ success "Finished dnsmasq setup"
 # MySQL
 info "Install MySQL"
 brew install mysql
-sudo brew services start mysql
+brew services start mysql
 success "MySQL installed"
 
 # PHP
-info "Install PHP@8.0"
+info "Install PHP@8.3"
 brew tap shivammathur/php
-brew install shivammathur/php/php@8.0
+brew install shivammathur/php/php@8.3
 brew unlink php
-brew link — overwrite — force php@8.0
-success "PHP@8.0 installed"
+brew link — overwrite — force php@8.3
+success "PHP@8.3 installed"
 
 # Apache
 info "Setup Apache"
@@ -81,7 +81,7 @@ if [[ -e "$HTTPD" ]]; then
 	fi
 	if ! grep -wq "php_module" "$HTTPD"; then
 		NUMBER=`awk '/^LoadModule/{n=NR}END{print n}' $HTTPD`
-		sed -i '' -e "${NUMBER}s|$|\nLoadModule php_module $(brew --prefix php@8.0)/lib/httpd/modules/libphp.so|" "$HTTPD"
+		sed -i '' -e "${NUMBER}s|$|\nLoadModule php_module $(brew --prefix php)/lib/httpd/modules/libphp.so|" "$HTTPD"
 	fi
 	sed -i '' 's/DirectoryIndex index.html/DirectoryIndex index.php index.html/g' "$HTTPD"
 	sed -i '' '/mod_deflate/s/^#//g' "$HTTPD"

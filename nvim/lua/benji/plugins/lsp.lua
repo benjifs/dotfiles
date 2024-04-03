@@ -1,37 +1,45 @@
 return {
     'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
+    branch = 'v3.x',
     dependencies = {
-        -- LSP Support
-        { 'neovim/nvim-lspconfig' },             -- Required
-        { 'williamboman/mason.nvim' },           -- Optional
-        { 'williamboman/mason-lspconfig.nvim' }, -- Optional
-
-        -- Autocompletion
-        { 'hrsh7th/nvim-cmp' },     -- Required
-        { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-        { 'L3MON4D3/LuaSnip' },     -- Required
+        { 'williamboman/mason.nvim' },
+        { 'williamboman/mason-lspconfig.nvim' },
+        { 'neovim/nvim-lspconfig' },
+        { 'hrsh7th/cmp-nvim-lsp' },
+        { 'hrsh7th/nvim-cmp' },
+        { 'L3MON4D3/LuaSnip' },
     },
     config = function()
-        local lsp = require('lsp-zero').preset({})
+        local lsp_zero = require('lsp-zero')
 
-        lsp.preset('recommended')
-
-        lsp.ensure_installed({
-            'lua_ls',
+        lsp_zero.configure('lua_ls', {
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = { 'vim' }
+                    }
+                }
+            }
         })
 
-        lsp.on_attach(function(client, bufnr)
-            lsp.default_keymaps({ buffer = bufnr })
+        lsp_zero.on_attach(function(client, bufnr)
+            -- see :help lsp-zero-keybindings
+            -- to learn the available actions
+            lsp_zero.default_keymaps({ buffer = bufnr })
         end)
 
-        -- When you don't have mason.nvim installed
-        -- You'll need to list the servers installed in your system
-        lsp.setup_servers({ 'tsserver', 'eslint' })
-
-        -- (Optional) Configure lua language server for neovim
-        require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-
-        lsp.setup()
+        -- see :help lsp-zero-guide:integrate-with-mason-nvim
+        -- to learn how to use mason.nvim with lsp-zero
+        require('mason').setup({})
+        require('mason-lspconfig').setup({
+            ensure_installed = {
+                'lua_ls',
+                'eslint',
+                'tsserver',
+            },
+            handlers = {
+                lsp_zero.default_setup,
+            }
+        })
     end,
 }

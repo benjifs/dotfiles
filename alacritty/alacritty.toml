@@ -1,0 +1,19 @@
+import = ["~/.config/alacritty/sylveon.toml"]
+
+[font]
+size = 13.0
+
+[font.normal]
+family = "CommitMono"
+style = "Regular"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[window]
+decorations = "none"
+
+[window.padding]
+x = 8
+y = 8
