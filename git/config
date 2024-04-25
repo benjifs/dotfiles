@@ -30,5 +30,5 @@
 [includeIf "hasconfig:remote.*.url:git@git.sr.ht:*/**"]
 	path = ~/.config/git/config-srht
 
-[includeIf "hasconfig:remote.*.url:git-codecommit.*.amazonaws.com:*/**"]
+[includeIf "hasconfig:remote.*.url:ssh://git-codecommit.*.amazonaws.com/**/*"]
 	path = ~/.config/git/config-aws
