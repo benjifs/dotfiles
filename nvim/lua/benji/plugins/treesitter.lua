@@ -3,7 +3,7 @@ return {
 	build = ':TSUpdate',
 	opts = {
 		-- A list of parser names, or "all"
-		ensure_installed = { "help", "javascript", "typescript", "lua" },
+		ensure_installed = { "help", "javascript", "typescript", "lua", "vimdoc" },
 
 		-- Install parsers synchronously (only applied to `ensure_installed`)
 		sync_install = false,
