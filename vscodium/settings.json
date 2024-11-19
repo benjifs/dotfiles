@@ -1,31 +1,37 @@
-
 {
-    "editor.minimap.enabled": false,
-    "workbench.colorTheme": "Sylveon",
-    "editor.insertSpaces": false,
-    "editor.tabSize": 2,
-    "editor.renderWhitespace": "all",
-    "editor.renderLineHighlight": "all",
-    "editor.scrollBeyondLastLine": false,
-    "editor.wordWrap": "on",
-    "editor.rulers": [80, 120],
-    // "editor.formatOnSave": true,
-    "workbench.colorCustomizations": {},
-    "editor.fontFamily": "Hack, Monaco, 'Courier New', monospace",
-    "workbench.editor.enablePreview": false,
-    "workbench.editor.enablePreviewFromQuickOpen": false,
-    "explorer.openEditors.visible": 0,
-    "workbench.startupEditor": "newUntitledFile",
-    "[css]": {
-        "editor.suggest.insertMode": "replace"
-    },
-    "editor.fontLigatures": false,
-    "javascript.suggest.autoImports": false,
-    "vim.useSystemClipboard": true,
-    "files.associations": {
-        "*.html": "html"
-    },
-    "files.trimTrailingWhitespace": true,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "terminal.integrated.enableMultiLinePasteWarning": false
+	"editor.minimap.enabled": false,
+	"workbench.colorTheme": "Sylveon",
+	"editor.insertSpaces": false,
+	"editor.tabSize": 2,
+	"editor.renderWhitespace": "all",
+	"editor.detectIndentation": false,
+	"editor.renderLineHighlight": "all",
+	"editor.scrollBeyondLastLine": false,
+	"editor.wordWrap": "on",
+	"editor.rulers": [
+		80,
+		120
+	],
+	"editor.formatOnSave": false,
+	"workbench.colorCustomizations": {},
+	"editor.fontFamily": "Hack, Monaco, 'Courier New', monospace",
+	"workbench.editor.enablePreview": false,
+	"workbench.editor.enablePreviewFromQuickOpen": false,
+	"explorer.openEditors.visible": 1,
+	"workbench.startupEditor": "newUntitledFile",
+	"[css]": {
+		"editor.suggest.insertMode": "replace"
+	},
+	"editor.fontLigatures": false,
+	"javascript.suggest.autoImports": false,
+	"files.associations": {
+		"*.html": "html",
+		"*.yml": "yaml"
+	},
+	"files.trimTrailingWhitespace": true,
+	"terminal.integrated.enableMultiLinePasteWarning": "never",
+	"editor.accessibilitySupport": "off",
+	"workbench.layoutControl.enabled": false,
+	"diffEditor.ignoreTrimWhitespace": false,
+	"workbench.settings.applyToAllProfiles": [],
 }

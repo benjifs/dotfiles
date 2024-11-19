@@ -44,7 +44,7 @@ success "Finished dnsmasq setup"
 
 # MySQL
 info "Install MySQL"
-brew install mysql
+brew install mysql@8.0
 brew services start mysql
 success "MySQL installed"
 

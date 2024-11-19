@@ -20,6 +20,12 @@ yabai -m config left_padding                 15
 yabai -m config right_padding                15
 yabai -m config window_gap                   15
 
+# spaces
+yabai -m space 1 --label chat
+yabai -m space 2 --label work
+yabai -m space 3 --label main
+yabai -m space 4 --label other
+
 # rules
 yabai -m rule --add app="^Archive Utility$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
@@ -41,7 +47,10 @@ yabai -m rule --add app="^VLC$" manage=off
 
 yabai -m rule --add app="^Firefox" title="^Opening" manage=off
 
-yabai -m rule --add app="^Android Studio$" manage=off
-yabai -m rule --add app="^IntelliJ" manage=off
-yabai -m rule --add app="^Simulator" manage=off
-yabai -m rule --add app="^Xcode$" manage=off
+yabai -m rule --add app="^Android Studio$" manage=off space=other
+yabai -m rule --add app="^IntelliJ" manage=off space=work
+#yabai -m rule --add label="IntelliJ IDEA" app="IntelliJ IDEA" manage=off space=work
+yabai -m rule --add app="^Simulator" manage=off space=other
+yabai -m rule --add app="^Tot$" manage=off
+yabai -m rule --add app="^Xcode$" manage=off space=other
+yabai -m rule --add app="^Xcode$" label="Archives" manage=off space=other

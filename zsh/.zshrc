@@ -37,7 +37,7 @@ fi
 # otherwise, default values get prepended
 # which ignores these
 if type brew &>/dev/null; then
-	export PATH="$(brew --prefix)/opt/ruby/bin:$PATH"
+	export PATH="$(brew --prefix)/opt/ruby/bin:$(brew --prefix)/opt/mysql@8.0/bin:$PATH"
 fi
 
 # Go
