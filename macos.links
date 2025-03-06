@@ -2,6 +2,7 @@ alacritty=~/.config/alacritty
 bin=~/.local/bin
 config/aliases=~/.config/aliases
 config/macos_aliases=~/.config/macos_aliases
+ghostty=~/.config/ghostty
 git=~/.config/git
 gnupg/gpg-agent-macos.conf=~/.gnupg/gpg-agent.conf
 nvim=~/.config/nvim

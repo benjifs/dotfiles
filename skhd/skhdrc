@@ -1,7 +1,6 @@
 #!/usr/bin/env sh
 
-# Open Alacritty
-cmd - return : open -na /Applications/Alacritty.app
+cmd - return : open -na /Applications/Ghostty.app
 
 # toggle window zoom
 alt - f : yabai -m window --toggle zoom-fullscreen
@@ -44,4 +43,3 @@ ctrl + alt - z : yabai -m display --focus prev || yabai -m display --focus next
 
 # float / unfloat window and center on screen
 shift + alt - space : yabai -m window --toggle float; yabai -m window --grid 1:1:0:0:1:1
-

@@ -1,0 +1,7 @@
+font-family = "Hack"
+theme = sylveon
+window-padding-x = 10
+window-padding-y = 10
+quit-after-last-window-closed = true
+window-save-state = never
+macos-titlebar-style = hidden
