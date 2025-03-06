@@ -1,0 +1,56 @@
+#!/usr/bin/env sh
+
+# Check if jq is installed
+[ ! -x "$(command -v jq)" ] && echo "jq is not installed" && exit 1
+
+usage() {
+	printf "Usage: $(basename $0) [options] query\n\n"
+	printf "Options:\n"
+	printf "  -l, --long                   Get long description (default)\n"
+	printf "  -s, --short                  Get short description\n"
+	printf "  -h, --help                   Show this help message\n"
+}
+
+[ $# -eq 0 ] && usage && exit 0
+
+URL="https://en.wikipedia.org/w/api.php"
+# can use pageids instead of titles?
+PARAMS="format=json&action=query&titles="
+
+searchLong() {
+	LONG_PARAMS="prop=extracts&exintro&explaintext"
+	q=$(encodeQuery "${*}")
+	curl -s "${URL}?${LONG_PARAMS}&${PARAMS}${q}" | jq -r '.query.pages[].extract // "No description available"'
+}
+
+searchShort() {
+	SHORT_PARAMS="prop=pageprops"
+	q=$(encodeQuery "${*}")
+	curl -s "${URL}?${SHORT_PARAMS}&${PARAMS}${q}" | jq -r '.query.pages[].pageprops["wikibase-shortdesc"] // "No description available"'
+}
+
+encodeQuery() {
+	echo "${*}" | jq -Rr @uri
+}
+
+case "$1" in
+	-h | --help)
+		usage
+		;;
+	-s | --short)
+		shift
+		searchShort "${*}"
+		;;
+	-l | --long)
+		shift
+		searchLong "${*}"
+		;;
+	*)
+		if [[ $1 == -* ]]; then
+			printf "Invalid option: $1\n\n"
+			usage
+			exit 1
+		fi
+		searchLong "${*}"
+		;;
+esac

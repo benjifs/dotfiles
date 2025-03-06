@@ -1,8 +1,36 @@
 [alias]
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	tagv = "!f() { git tag -a -m "v$1" "v$1"; }; f"
 	# Random commit message
 	rc = !git commit -m \"wip: $(curl -s https://whatthecommit.com/index.txt)\"
+
+[color]
+	ui = auto
+
+[column]
+	ui = auto
+
+[branch]
+	sort = -committerdate
+
+[push]
+	autoSetupRemote = true
+	followTags = true
+
+[fetch]
+	all = true
+	prune = true
+	pruneTags = true
+
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+
+[merge]
+	conflictstyle = zdiff3
 
 [core]
 	excludesfile = ~/.config/git/gitignore
@@ -10,9 +38,6 @@
 
 [init]
 	defaultBranch = main
-
-[color]
-	ui = auto
 
 [commit]
 	gpgsign = true

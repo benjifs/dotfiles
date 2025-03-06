@@ -6,9 +6,10 @@
 
 # zshenv needs to be symlinked to $XDG_CONFIG_HOME/.zshenv so that zsh knows where its configs are
 [ -z "$XDG_CONFIG_HOME" ] && export XDG_CONFIG_HOME="$HOME/.config"
-export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-
+[ -z "$XDG_DATA_HOME" ] && export XDG_DATA_HOME="$HOME/.local/share"
 [ -z "$XDG_CACHE_HOME" ] && export XDG_CACHE_HOME="$HOME/.cache"
+
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export ZCACHE="$XDG_CACHE_HOME/zsh"
 
 # Create {.config,.cache}/zsh directories if they dont exist
