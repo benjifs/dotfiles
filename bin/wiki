@@ -4,11 +4,14 @@
 [ ! -x "$(command -v jq)" ] && echo "jq is not installed" && exit 1
 
 usage() {
-	printf "Usage: $(basename $0) [options] query\n\n"
-	printf "Options:\n"
-	printf "  -l, --long                   Get long description (default)\n"
-	printf "  -s, --short                  Get short description\n"
-	printf "  -h, --help                   Show this help message\n"
+	cat <<EOF
+Usage: $(basename "$0") [options] query
+
+Options:
+  -l, --long     Get long description (default)
+  -s, --short    Get short description
+  -h, --help     Show this help message
+EOF
 }
 
 [ $# -eq 0 ] && usage && exit 0
@@ -17,20 +20,17 @@ URL="https://en.wikipedia.org/w/api.php"
 # can use pageids instead of titles?
 PARAMS="format=json&action=query&titles="
 
-searchLong() {
-	LONG_PARAMS="prop=extracts&exintro&explaintext"
-	q=$(encodeQuery "${*}")
-	curl -s "${URL}?${LONG_PARAMS}&${PARAMS}${q}" | jq -r '.query.pages[].extract // "No description available"'
-}
-
-searchShort() {
-	SHORT_PARAMS="prop=pageprops"
-	q=$(encodeQuery "${*}")
-	curl -s "${URL}?${SHORT_PARAMS}&${PARAMS}${q}" | jq -r '.query.pages[].pageprops["wikibase-shortdesc"] // "No description available"'
-}
-
-encodeQuery() {
-	echo "${*}" | jq -Rr @uri
+searchWiki() {
+	encoded=$(echo "$2" | jq -Rr @uri)
+	case "$1" in
+		short)
+			output=$(curl -s "$URL?prop=pageprops&$PARAMS$encoded" | jq -r '.query.pages[].pageprops["wikibase-shortdesc"] // "No description available"')
+			;;
+		long)
+			output=$(curl -s "$URL?prop=extracts&exintro&explaintext&$PARAMS$encoded" | jq -r '.query.pages[].extract // "No description available"')
+			;;
+	esac
+	echo "${output:-No results found}"
 }
 
 case "$1" in
@@ -39,18 +39,18 @@ case "$1" in
 		;;
 	-s | --short)
 		shift
-		searchShort "${*}"
+		searchWiki "short" "${*}"
 		;;
 	-l | --long)
 		shift
-		searchLong "${*}"
+		searchWiki "long" "${*}"
+		;;
+	-*)
+		printf "Invalid option: %s\n\n" "$1"
+		usage
+		exit 1
 		;;
 	*)
-		if [[ $1 == -* ]]; then
-			printf "Invalid option: $1\n\n"
-			usage
-			exit 1
-		fi
-		searchLong "${*}"
+		searchWiki "long" "${*}"
 		;;
 esac

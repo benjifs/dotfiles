@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+RESET=$'\e[0m'
+GREEN=$'\e[32m'
+RED=$'\e[31m'
+inv=$'\e[7m'
+
+urls=(
+	"host1"
+	"host2"
+	"example.com"
+)
+
+for url in ${urls[@]} ; do
+	code=$(curl --silent --output /dev/null --write-out "%{http_code}" "$url")
+	if [ "$code" -eq 200 ]; then
+		printf "%-5s %-30s %-3s\n" "${GREEN}●${RESET}" "$url"
+	else
+		printf "%-5s %-30s %-5s\n" "${RED}●${RESET}" "$url" "${RED}${inv} $code ${RESET}"
+	fi
+done

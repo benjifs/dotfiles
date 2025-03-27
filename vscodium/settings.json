@@ -15,7 +15,6 @@
 	"editor.formatOnSave": false,
 	"workbench.colorCustomizations": {},
 	"editor.fontFamily": "Hack, Monaco, 'Courier New', monospace",
-	"workbench.editor.enablePreview": false,
 	"workbench.editor.enablePreviewFromQuickOpen": false,
 	"explorer.openEditors.visible": 1,
 	"workbench.startupEditor": "newUntitledFile",
@@ -34,4 +33,5 @@
 	"workbench.layoutControl.enabled": false,
 	"diffEditor.ignoreTrimWhitespace": false,
 	"workbench.settings.applyToAllProfiles": [],
+	"chat.commandCenter.enabled": false
 }

@@ -22,7 +22,7 @@ return {
 		local palette = {
 			background = "#131415",
 			foreground = "#ffffff",
-			comment = "#464646",
+			comment = "#666666",
 			cyan = "#56c7f5",
 			green = "#6ef596",
 			pink = "#f27b92",
