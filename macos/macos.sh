@@ -420,7 +420,7 @@ defaults write com.apple.dock autohide -bool true
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
 
-# Don’t show recent applications in Dock		
+# Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
 
 # Disable the Launchpad gesture (pinch with thumb and three fingers)
@@ -623,11 +623,11 @@ sudo mdutil -E / > /dev/null
 
 # # Only use UTF-8 in Terminal.app
 # defaults write com.apple.terminal StringEncodings -array 4
-# 
+#
 # # Enable Secure Keyboard Entry in Terminal.app
 # # See: https://security.stackexchange.com/a/47786/8918
 # defaults write com.apple.terminal SecureKeyboardEntry -bool true
-# 
+#
 # # Don’t display the annoying prompt when quitting iTerm
 # defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 # # hide tab title bars
@@ -637,7 +637,7 @@ sudo mdutil -E / > /dev/null
 # defaults write com.googlecode.iterm2 HotkeyChar -int 96;
 # defaults write com.googlecode.iterm2 HotkeyCode -int 50;
 # defaults write com.googlecode.iterm2 HotkeyModifiers -int 262401;
-# 
+#
 # # Load iTerm preferences from ~/.iterm2
 # defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.iterm2"
 # defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
@@ -694,7 +694,7 @@ defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
 defaults write com.apple.DiskUtility advanced-image-options -bool true
 
-# Auto-play videos when opened with QuickTime Player		
+# Auto-play videos when opened with QuickTime Player
 defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen -bool true
 
 ###############################################################################

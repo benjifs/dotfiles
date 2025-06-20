@@ -20,6 +20,7 @@ if [ "$(uname -s)" == "Darwin" ]; then
 	. "$SCRIPTS/prep.sh"
 	. "$SCRIPTS/brew.sh"
 	. "$SCRIPTS/macos.sh"
+	. "$SCRIPTS/postbrew.sh"
 	. "$SCRIPTS/map-caps-to-ctrl.sh"
 	. "$SCRIPTS/postdots.sh"
 
