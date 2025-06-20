@@ -26,8 +26,9 @@ brew "unrar"
 brew "wget"
 brew "zsh"
 
-# VIM
-# brew "vim"
+# personal
+brew "bottom" # btm
+brew "jq"
 brew "neovim"
 
 # MAMP Things (see mamp.sh)
@@ -39,22 +40,14 @@ brew "swiftlint"
 
 # JS
 brew "n"
-# brew "yarn"
-
-# DENO
-# brew "deno"
-
-# Go
-# brew "go"
-
-# Window Manager
-brew "skhd"
-brew "yabai"
-brew "jq"
 
 # GPG
 brew "gnupg"
 brew "pinentry-mac"
+
+# Window Manager
+brew "skhd"
+brew "yabai"
 
 # fun
 brew "cmatrix"
@@ -68,32 +61,29 @@ brew "nmap"
 brew "pfetch"
 brew "youtube-dl"
 
-# Testing
-brew "bottom" # btm
-
 # Casks
-cask "alacritty", args: {"no-quarantine": true}
 cask "android-file-transfer"
 cask "android-studio"
 # cask "arduino"
 cask "balenaetcher"
 # cask "bettertouchtool"
-cask "brave-browser"
 # cask "calibre"
 # cask "cyberduck"
 # cask "discord"
 # cask "dropbox"
-cask "firefox-nightly"
+cask "ghostty"
 # cask "gimp"
-cask "google-chrome"
-cask "insomnia"
+# cask "inkscape"
 cask "itsycal"
 cask "keka"
 # cask "keybase"
 cask "lagrange"
+cask "librewolf"
 cask "obsidian"
 cask "sequel-ace"
 cask "slack"
+cask "soduto"
+cask "syncthing"
 cask "thunderbird"
 # cask "tor-browser"
 # cask "virtualbox"
