@@ -20,15 +20,15 @@ return {
 		v.colors_name = 'sylveon'
 
 		local palette = {
-			background = "#131415",
-			foreground = "#ffffff",
-			comment = "#666666",
-			cyan = "#56c7f5",
-			green = "#6ef596",
-			pink = "#f27b92",
-			purple = "#71a8fe",
-			red = "#f55678",
-			yellow = "#f7f086",
+			background = '#131415',
+			foreground = '#ffffff',
+			comment = '#666666',
+			cyan = '#56c7f5',
+			green = '#6ef596',
+			pink = '#f27b92',
+			purple = '#71a8fe',
+			red = '#f55678',
+			yellow = '#f7f086',
 		}
 
 		-- initialize all colors from palette
@@ -41,7 +41,7 @@ return {
 		Group.new('String', c.green, c.none, no)
 		Group.new('Comment', c.comment, c.none, i)
 		Group.new('SpecialComment', c.foreground, c.purple, i)
-		Group.new("Warnings", c.yellow, c.none, no)
+		Group.new('Warnings', c.yellow, c.none, no)
 		Group.new('Error', c.red, c.none, no)
 		Group.new('Todo', c.cyan, c.none, no)
 		Group.new('Special', c.foreground, c.none, no)

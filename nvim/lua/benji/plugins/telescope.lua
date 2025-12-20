@@ -1,6 +1,5 @@
-return {
+return { -- Fuzzy Finder (files, lsp, etc)
 	'nvim-telescope/telescope.nvim',
-	tag = '0.1.4',
 	dependencies = 'nvim-lua/plenary.nvim',
 	config = function()
 		vim.keymap.set('n', '<leader>pf', require('telescope.builtin').find_files, {})

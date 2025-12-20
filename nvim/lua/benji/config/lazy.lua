@@ -7,7 +7,7 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 require('lazy').setup('benji.plugins', {
 	defaults = { version = false },
-	checker = { enabled = true },
+	-- checker = { enabled = true },
 	performance = {
 		rtp = {
 			disabled_plugins = {
