@@ -36,7 +36,6 @@ return {
 			Color.new(key, value)
 		end
 
-
 		Group.new('Normal', c.foreground, c.none, no)
 		Group.new('String', c.green, c.none, no)
 		Group.new('Comment', c.comment, c.none, i)

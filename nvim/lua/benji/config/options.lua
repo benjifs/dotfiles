@@ -1,32 +1,47 @@
-local opt = vim.opt
 -- General
-opt.backup = false
-opt.swapfile = false
-opt.undodir = os.getenv('HOME') .. '/.cache/vim/undo'
-opt.undofile = true
+vim.opt.backup = false
+vim.opt.swapfile = false
+vim.opt.undodir = os.getenv('HOME') .. '/.cache/vim/undo'
+vim.opt.undofile = true
 -- UI
-opt.guicursor = ''
-opt.number = true
-opt.relativenumber = true
-opt.termguicolors = true
-opt.wrap = false
-opt.colorcolumn = '80'
+vim.opt.guicursor = ''
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.termguicolors = true
+vim.opt.wrap = false
+vim.opt.colorcolumn = '80'
+vim.opt.winborder = 'rounded'
 -- Tabs, Indent
-opt.tabstop = 2
-opt.softtabstop = 2
-opt.shiftwidth = 2
-opt.expandtab = false
-opt.smartindent = true
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = false
+vim.opt.smartindent = true
 -- Search
-opt.ignorecase = true
-opt.smartcase = true
-opt.inccommand = 'nosplit'
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.inccommand = 'nosplit'
 -- Extra
-opt.scrolloff = 8
-opt.signcolumn = 'yes'
-opt.isfname:append('@-@')
-opt.updatetime = 50
-opt.list = true
-opt.listchars = { tab = '▸ ', trail = '·', eol = '¬', nbsp = '_', space = '·' }
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = 'yes'
+vim.opt.isfname:append('@-@')
+vim.opt.updatetime = 50
+vim.opt.list = true
+vim.opt.listchars = { tab = '▸ ', trail = '·', eol = '¬', nbsp = '_', space = '·' }
 
-vim.diagnostic.config({ virtual_text = true })
+vim.diagnostic.config({
+	underline = true,
+	virtual_text = true,
+})
+
+-- I think this is supposed to work but there's something wrong with my config.
+-- Will check back later but for now, blink is good.
+-- vim.api.nvim_create_autocmd('LspAttach', {
+-- 	callback = function(ev)
+-- 		local client = vim.lsp.get_client_by_id(ev.data.client_id)
+-- 		if client and client:supports_method('textDocument/completion') then
+-- 			vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+-- 		end
+-- 	end,
+-- })
+-- vim.opt.completeopt = 'menuone,noinsert,popup,fuzzy'
