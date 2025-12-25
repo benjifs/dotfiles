@@ -1,14 +1,9 @@
 # Brewfile
 # brew bundle dump
 
-# For firefox-nightly
-tap "homebrew/cask-versions"
-# For yabai and skhd
-tap "koekeishiya/formulae"
-
 brew "ack"
 brew "coreutils"
-brew "curl"
+# brew "curl"
 brew "ffmpeg"
 brew "findutils"
 brew "git"
@@ -16,10 +11,10 @@ brew "gnu-sed"
 brew "imagemagick"
 brew "moreutils"
 brew "ngrep"
-brew "p7zip"
-brew "python"
-brew "ruby"
-brew "telnet"
+# brew "p7zip"
+# brew "python"
+# brew "ruby"
+# brew "telnet"
 brew "tmux"
 brew "tree"
 brew "unrar"
@@ -28,6 +23,7 @@ brew "zsh"
 
 # personal
 brew "bottom" # btm
+brew "git-crypt"
 brew "jq"
 brew "neovim"
 
@@ -36,37 +32,38 @@ brew "neovim"
 # brew "mysql", restart_service: true, link: false
 
 # Swift
-brew "swiftlint"
+# brew "swiftlint" # needs Xcode
 
 # JS
-brew "n"
+# brew "n"
 
 # GPG
 brew "gnupg"
 brew "pinentry-mac"
 
 # Window Manager
-brew "skhd"
-brew "yabai"
+# For yabai and skhd
+# tap "koekeishiya/formulae"
+# brew "skhd"
+# brew "yabai"
 
 # fun
 brew "cmatrix"
-brew "figlet"
+brew "exiftool"
 brew "fortune"
-brew "lolcat"
-brew "megatools"
-brew "mitmproxy"
-brew "neofetch"
+brew "id3v2"
+# brew "lynx"
 brew "nmap"
-brew "pfetch"
+brew "toilet"
 brew "youtube-dl"
 
 # Casks
-cask "android-file-transfer"
-cask "android-studio"
+# cask "android-file-transfer"
+# cask "android-studio"
 # cask "arduino"
-cask "balenaetcher"
+# cask "balenaetcher"
 # cask "bettertouchtool"
+# cask "boop"
 # cask "calibre"
 # cask "cyberduck"
 # cask "discord"
@@ -74,21 +71,25 @@ cask "balenaetcher"
 cask "ghostty"
 # cask "gimp"
 # cask "inkscape"
-cask "itsycal"
-cask "keka"
+# cask "itsycal"
+# cask "keka"
 # cask "keybase"
-cask "lagrange"
-cask "librewolf"
-cask "obsidian"
+# cask "lagrange"
+# cask "librewolf"
+# cask "localsend"
+# cask "obsidian"
+# cask "orbstack"
 cask "sequel-ace"
 cask "slack"
-cask "soduto"
-cask "syncthing"
-cask "thunderbird"
-# cask "tor-browser"
+#cask "soduto"
+# cask "syncthing-app"
+# cask "tailscale-app"
+# cask "thunderbird"
+# cask "utm"
 # cask "virtualbox"
-cask "vlc"
-cask "vscodium"
+# cask "vlc"
+# cask "vscodium"
+cask "zen"
 
 # Fonts
 tap "homebrew/cask-fonts"
