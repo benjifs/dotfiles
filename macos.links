@@ -1,4 +1,3 @@
-alacritty=~/.config/alacritty
 bin=~/.local/bin
 config/aliases=~/.config/aliases
 config/macos_aliases=~/.config/macos_aliases

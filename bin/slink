@@ -23,9 +23,9 @@ link() {
 read_file() {
 	[ ! -f $1 ] && echo "File not found" && usage
 
-	while IFS=\= read -r LOC DEST; do
+	while IFS=\= read -r LOC DEST || [ -n "$LOC" ]; do
 		link "$(pwd)/$LOC" "$DEST"
-	done < $1
+	done < "$1"
 
 	exit 0
 }
