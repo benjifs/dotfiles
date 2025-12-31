@@ -1,15 +1,14 @@
 # Basic zsh configuration
-
 export ZSH_THEME=bnj
 
 # To sign commits with GPG
 export GPG_TTY=$(tty)
 
-for alias in $HOME/.config/*aliases; do
+for alias in $XDG_CONFIG_HOME/*aliases; do
 	[ -f "$alias" ] && source "$alias"
 done
 
-for file in $HOME/.config/zsh/*.zsh; do
+for file in $ZDOTDIR/*.zsh; do
 	source "$file"
 done
 
@@ -33,13 +32,5 @@ if [ "$TERM" = "linux" ]; then
 	printf "\033]Pfffffff"
 fi
 
-# Need to add these to PATH in .zshrc
-# otherwise, default values get prepended
-# which ignores these
-if type brew &>/dev/null; then
-	export PATH="$(brew --prefix)/opt/ruby/bin:$(brew --prefix)/opt/mysql@8.0/bin:$PATH"
-fi
-
-# Go
-# export GOPATH=$HOME/.go
-# export PATH="$GOPATH/bin:$PATH"
+# Load theme or use default theme
+[ -f "$ZDOTDIR/${ZSH_THEME:-bnj-min}.zsh_theme" ] && source "$ZDOTDIR/${ZSH_THEME:-bnj-min}.zsh_theme"

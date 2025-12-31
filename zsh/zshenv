@@ -1,13 +1,13 @@
 #!/usr/bin/env zsh
 # Moving contents of .zprofile to .zshenv
-# because SHELL_SESSIONS_DISABLE needs to be set in zshenv
 # The order in which zsh startup files are run is:
 # .zshenv → .zprofile → .zshrc → .zlogin → .zlogout
 
-# zshenv needs to be symlinked to $XDG_CONFIG_HOME/.zshenv so that zsh knows where its configs are
-[ -z "$XDG_CONFIG_HOME" ] && export XDG_CONFIG_HOME="$HOME/.config"
-[ -z "$XDG_DATA_HOME" ] && export XDG_DATA_HOME="$HOME/.local/share"
-[ -z "$XDG_CACHE_HOME" ] && export XDG_CACHE_HOME="$HOME/.cache"
+# zshenv needs to be symlinked to $HOME/.zshenv so that zsh knows where its configs are
+export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
+export XDG_CACHE_HOME=${XDG_CACHE_HOME:-$HOME/.cache}
+export XDG_DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}
+export XDG_BIN_HOME=${XDG_BIN_HOME:-$HOME/.local/bin}
 
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export ZCACHE="$XDG_CACHE_HOME/zsh"
@@ -15,26 +15,3 @@ export ZCACHE="$XDG_CACHE_HOME/zsh"
 # Create {.config,.cache}/zsh directories if they dont exist
 [ ! -d $ZDOTDIR ] && mkdir -p $ZDOTDIR
 [ ! -d $ZCACHE ] && mkdir -p $ZCACHE
-
-# Set workspace
-export WORKSPACE=$HOME/workspace
-
-# Make vim the default editor.
-export EDITOR=nvim
-
-# Prefer US English and use UTF-8.
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-
-# Don't clear the screen after quitting a manual page.
-export MANPAGER='less -X'
-
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="/usr/local/lib/ruby/gems/3.4.0/bin:$PATH"
-export PATH="/usr/local/opt/python@3.13/libexec/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-
-# Disable .zsh_sessions
-# https://superuser.com/a/1610999
-export SHELL_SESSIONS_DISABLE=1
