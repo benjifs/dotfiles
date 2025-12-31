@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+read -r -p "This way to remap keys no longer works. Do you still wish to continue? [y|N] " response
+if [[ $response =~ ^(y|yes|Y) ]]; then
+
 # Map Caps Lock key to Left Control key
 # https://developer.apple.com/library/content/technotes/tn2450/_index.html
 # This doesnt work. Reverts on restart
@@ -24,16 +27,18 @@ if [ $n1 -eq $n2 ]; then
 			KBS+=" "
 		fi
 		KBS+="$VID-$PID-0"
-		done <<< "$VENDOR_ID" 3<<< "$PRODUCT_ID"
+	done <<< "$VENDOR_ID" 3<<< "$PRODUCT_ID"
 
-		KBS=$(echo $KBS | xargs -n1 | sort -u)
-		while read -r KB; do
-			defaults -currentHost write -g com.apple.keyboard.modifiermapping.$KB -array \
+	KBS=$(echo $KBS | xargs -n1 | sort -u)
+	while read -r KB; do
+		defaults -currentHost write -g com.apple.keyboard.modifiermapping.$KB -array \
 '<dict>
 <key>HIDKeyboardModifierMappingDst</key>
-<integer>30064771296</integer>
+<integer>0x7000000E0</integer>
 <key>HIDKeyboardModifierMappingSrc</key>
-<integer>30064771129</integer>
+<integer>0x700000039</integer>
 </dict>'
-		done <<< "$KBS"
+	done <<< "$KBS"
+fi
+
 fi

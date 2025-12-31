@@ -20,11 +20,11 @@ brew_bin=$(which brew) 2>&1 > /dev/null
 if [[ $? != 0 ]]; then
 	success
 	running "installing homebrew"
-	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	if [[ $? != 0 ]]; then
 		error "unable to install homebrew, script $0 abort!"
 		exit -1
-  fi
+	fi
 else
 	warn "ALREADY INSTALLED"
 

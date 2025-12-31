@@ -1,6 +1,11 @@
 # benji's dotfiles
 
 ## Changelog
+
+### 2025
+* Renamed `links` to [`slink`](/bin/slink)
+* Moved to Apple Silicon macOS so changed a few things
+
 ### 2022
 * Updating to nvim
 
@@ -13,11 +18,11 @@
 ---
 
 ## dotfiles setup
-To only setup dotfiles, run [`./bin/links`](/bin/links) with the appropriate
+To only setup dotfiles, run [`./bin/slink`](/bin/slink) with the appropriate
 `*.links` file.
 
 ```bash
-./bin/links -f void.links
+./bin/slink -f void.links
 ```
 
 ## macOS setup
