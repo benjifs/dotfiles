@@ -11,4 +11,3 @@ alias xro="sudo xbps-remove -Oo"
 # -R repository mode
 # -s search
 alias xs="sudo xbps-query -Rs"
-

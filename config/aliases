@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-
 alias history="history 1"
-alias vi="vim"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -45,4 +43,4 @@ alias ssh='TERM=xterm-256color ssh'
 alias ducks="du -cks * | sort -rn | head -11"
 
 # Copy with rsync
-alias cpr "rsync -ah --partial --inplace --info=progress2"
+alias cpr="rsync -ah --partial --inplace --info=progress2"
