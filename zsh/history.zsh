@@ -1,5 +1,5 @@
-HISTSIZE=50000                      # How many lines of history to keep in memory
-SAVEHIST=10000                      # Number of history entries to save to disk
+HISTSIZE=10000                      # How many lines of history to keep in memory
+SAVEHIST=50000                      # Number of history entries to save to disk
 HISTFILE=$ZCACHE/zsh_history        # Where to save history to disk
 HISTDUP=erase                       # Erase duplicates in the history file
 

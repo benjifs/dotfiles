@@ -17,7 +17,6 @@ export LC_ALL=en_US.UTF-8
 # Don't clear the screen after quitting a manual page.
 export MANPAGER='less -X'
 
-
 if [ "$(uname -s)" = "Darwin" ]; then
 	if [ "$(uname -m)" = "arm64" ]; then
 		eval "$(/opt/homebrew/bin/brew shellenv)"

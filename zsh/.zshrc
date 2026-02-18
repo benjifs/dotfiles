@@ -1,5 +1,5 @@
 # Basic zsh configuration
-export ZSH_THEME=bnj
+export ZSH_THEME=scunner
 
 # To sign commits with GPG
 export GPG_TTY=$(tty)
@@ -33,4 +33,4 @@ if [ "$TERM" = "linux" ]; then
 fi
 
 # Load theme or use default theme
-[ -f "$ZDOTDIR/${ZSH_THEME:-bnj-min}.zsh_theme" ] && source "$ZDOTDIR/${ZSH_THEME:-bnj-min}.zsh_theme"
+[ -f "$ZDOTDIR/${ZSH_THEME:-bnj}.zsh-theme" ] && source "$ZDOTDIR/${ZSH_THEME:-bnj}.zsh-theme"

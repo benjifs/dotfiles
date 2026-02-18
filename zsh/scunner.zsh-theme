@@ -1,5 +1,3 @@
-# bnj.zsh
-
 # Remove RPROMPT padding-right
 ZLE_RPROMPT_INDENT=0
 
