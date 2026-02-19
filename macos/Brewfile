@@ -17,7 +17,6 @@ brew "ngrep"
 # brew "telnet"
 brew "tmux"
 brew "tree"
-brew "unrar"
 brew "wget"
 brew "zsh"
 
@@ -36,26 +35,26 @@ brew "neovim"
 
 # JS
 # brew "n"
+brew "fnm"
 
 # GPG
 brew "gnupg"
 brew "pinentry-mac"
 
 # Window Manager
-# For yabai and skhd
-# tap "koekeishiya/formulae"
-# brew "skhd"
-# brew "yabai"
+tap "koekeishiya/formulae"
+brew "skhd"
+brew "yabai"
 
 # fun
 brew "cmatrix"
 brew "exiftool"
 brew "fortune"
 brew "id3v2"
-# brew "lynx"
+brew "lynx"
 brew "nmap"
 brew "toilet"
-brew "youtube-dl"
+brew "yt-dlp"
 
 # Casks
 # cask "android-file-transfer"
@@ -77,7 +76,7 @@ cask "helium-browser"
 # cask "keybase"
 # cask "lagrange"
 # cask "librewolf"
-# cask "localsend"
+cask "localsend"
 # cask "obsidian"
 # cask "orbstack"
 cask "sequel-ace"
@@ -89,10 +88,12 @@ cask "slack"
 # cask "utm"
 # cask "virtualbox"
 # cask "vlc"
-cask "vscodium"
+# cask "vscodium"
+cask "yaak"
+cask "zed"
 cask "zen"
 
 # Fonts
-tap "homebrew/cask-fonts"
-cask "font-fira-mono-for-powerline"
+# cask "font-fira-mono-for-powerline"
+cask "font-commit-mono"
 cask "font-hack"

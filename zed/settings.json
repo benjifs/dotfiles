@@ -1,0 +1,31 @@
+// Zed settings
+{
+  "disable_ai": true,
+  "title_bar": {
+    // "show_onboarding_banner": false,
+    // "show_user_picture": false,
+    "show_sign_in": false,
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  // UI
+  "ui_font_size": 16,
+  "ui_font_family": "Hack",
+  "buffer_font_size": 15,
+  "buffer_font_family": "Hack",
+  "show_whitespaces": "all",
+  "relative_line_numbers": "enabled",
+  "git": {
+    "git_gutter": "tracked_files",
+    "inline_blame": {
+      "enabled": true,
+    },
+  },
+  "theme": {
+    "mode": "dark",
+    "light": "Catppuccin Frappé",
+    "dark": "Catppuccin Mocha",
+  },
+}

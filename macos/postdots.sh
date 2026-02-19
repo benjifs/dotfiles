@@ -44,8 +44,8 @@ read -r -p "Would you like to run 'slink' to link your dotfiles [y/N] " response
 if [[ $response =~ ^(y|yes|Y) ]]; then
 	mkdir -p ${GNUPGHOME:-$HOME/.config/gnupg}
 	chmod 700 ${GNUPGHOME:-$HOME/.config/gnupg}
-  gpgconf --kill gpg-agent
-  gpgconf --launch gpg-agent
+	gpgconf --kill gpg-agent
+	gpgconf --launch gpg-agent
 	$SCRIPTS/../bin/slink -f $SCRIPTS/../macos.links
 	success "All dotfiles have been linked"
 else

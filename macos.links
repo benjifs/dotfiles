@@ -10,5 +10,6 @@ skhd=~/.config/skhd
 tmux=~/.config/tmux
 vscodium/settings.json=~/Library/Application Support/VSCodium/User/settings.json
 yabai=~/.config/yabai
+zed/settings.json=~/.config/zed/settings.json
 zsh=~/.config/zsh
 zsh/zshenv=~/.zshenv
