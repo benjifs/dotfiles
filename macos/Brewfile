@@ -43,8 +43,10 @@ brew "pinentry-mac"
 
 # Window Manager
 tap "koekeishiya/formulae"
-brew "skhd"
+#brew "skhd"
 brew "yabai"
+tap "jackielii/tap"
+brew "skhd-zig"
 
 # fun
 brew "cmatrix"
