@@ -17,12 +17,12 @@ export LC_ALL=en_US.UTF-8
 # Don't clear the screen after quitting a manual page.
 export MANPAGER='less -X'
 
-if [ "$(uname -s)" = "Darwin" ]; then
-	if [ "$(uname -m)" = "arm64" ]; then
-		eval "$(/opt/homebrew/bin/brew shellenv)"
-	else
-		eval "$(/usr/local/bin/brew shellenv)"
-	fi
+if [ -x /opt/homebrew/bin/brew ]; then            # Apple SIlicon
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -x /usr/local/bin/brew ]; then             # Intel
+	eval "$(/usr/local/bin/brew shellenv)"
 fi
+
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 export PATH=$XDG_BIN_HOME:$PATH
