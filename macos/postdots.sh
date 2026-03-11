@@ -51,3 +51,13 @@ if [[ $response =~ ^(y|yes|Y) ]]; then
 else
 	info "Skipped slink setup"
 fi
+
+if [[ $(uname -s) == Darwin && $(uname -m) == arm64 ]]; then              # Apple Silicon
+	read -r -p "Would you like to install Rosetta for Intel compatibility? [y/N] " response
+	if [[ $response =~ ^(y|yes|Y) ]]; then
+		softwareupdate --install-rosetta
+		success "Rosetta installed"
+	else
+		info "Skipped installing Rosetta"
+	fi
+fi

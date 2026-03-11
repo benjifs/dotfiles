@@ -23,6 +23,8 @@
       "enabled": true,
     },
   },
+  "hard_tabs": true,
+  "tab_size": 2,
   "theme": {
     "mode": "dark",
     "light": "Catppuccin Frappé",

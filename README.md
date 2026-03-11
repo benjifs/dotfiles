@@ -5,6 +5,7 @@
 ### 2025
 * Renamed `links` to [`slink`](/bin/slink)
 * Moved to Apple Silicon macOS so changed a few things
+	* Might also need to install [Rosetta](https://support.apple.com/en-us/102527) to support Intel based apps
 
 ### 2022
 * Updating to nvim
