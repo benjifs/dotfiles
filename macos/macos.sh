@@ -16,12 +16,8 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # General UI/UX                                                               #
 ###############################################################################
 
-# Set standby delay to 24 hours (default is 1 hour)
-# 2025
-# sudo pmset -a standbydelay 86400
-
 # Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
+sudo nvram StartupMute=%01
 
 # Menu bar: hide the Time Machine, Volume, and User icons
 defaults -currentHost write com.apple.systemuiserver dontAutoLoad -array \
@@ -32,7 +28,8 @@ defaults write com.apple.systemuiserver menuExtras -array \
 	"/System/Library/CoreServices/Menu Extras/Volume.menu" \
 	"/System/Library/CoreServices/Menu Extras/AirPort.menu" \
 	"/System/Library/CoreServices/Menu Extras/Battery.menu" \
-	"/System/Library/CoreServices/Menu Extras/Clock.menu"
+	"/System/Library/CoreServices/Menu Extras/Clock.menu" \
+	"/System/Library/CoreServices/Menu Extras/VPN.menu"
 
 defaults write com.apple.menuextra.clock "DateFormat" "EEE MMM d  HH:mm"
 defaults write com.apple.menuextra.clock "FlashDateSeparators" 0
@@ -75,7 +72,7 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
-/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -r -domain local -domain system -domain user
 
 # Display ASCII control characters using caret notation in standard text views
 # Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
@@ -192,7 +189,8 @@ defaults write -g AppleTemperatureUnit -string "Celsius"
 # sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
 
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
-sudo systemsetup -settimezone "America/Chicago" > /dev/null
+# 2026 Getting an error here. Will check in later
+# sudo systemsetup -settimezone "America/Chicago" > /dev/null
 
 # Stop iTunes from responding to the keyboard media keys
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
@@ -208,22 +206,22 @@ sudo pmset -a lidwake 1
 sudo pmset -a autorestart 1
 
 # Restart automatically if the computer freezes
-sudo systemsetup -setrestartfreeze on
+# sudo systemsetup -setrestartfreeze on
 
-# Sleep the display after 15 minutes
-sudo pmset -a displaysleep 15
+# Sleep the display after 10 minutes
+sudo pmset -a displaysleep 10
 
 # Disable machine sleep while charging
-sudo pmset -c sleep 0
+# sudo pmset -c sleep 0
 
-# Set machine sleep to 5 minutes on battery
-sudo pmset -b sleep 5
+# Set machine sleep to 15 minutes on battery
+sudo pmset -b sleep 15
 
 # Set standby delay to 24 hours (default is 1 hour)
-sudo pmset -a standbydelay 86400
+# sudo pmset -a standbydelay 86400
 
 # Never go into computer sleep mode
-sudo systemsetup -setcomputersleep Off > /dev/null
+# sudo systemsetup -setcomputersleep Off > /dev/null
 
 # Hibernation mode
 # 0: Disable hibernation (speeds up entering sleep mode)
@@ -677,7 +675,7 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 ###############################################################################
 
 # Enable the debug menu in Address Book
-defaults write com.apple.addressbook ABShowDebugMenu -bool true
+# defaults write com.apple.addressbook ABShowDebugMenu -bool true
 
 # Enable Dashboard dev mode (allows keeping widgets on the desktop)
 defaults write com.apple.dashboard devmode -bool true
