@@ -17,7 +17,7 @@ export LC_ALL=en_US.UTF-8
 # Don't clear the screen after quitting a manual page.
 export MANPAGER='less -X'
 
-if [ -x /opt/homebrew/bin/brew ]; then            # Apple SIlicon
+if [ -x /opt/homebrew/bin/brew ]; then            # Apple Silicon
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 elif [ -x /usr/local/bin/brew ]; then             # Intel
 	eval "$(/usr/local/bin/brew shellenv)"

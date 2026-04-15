@@ -30,4 +30,9 @@
     "light": "Catppuccin Frappé",
     "dark": "Catppuccin Mocha",
   },
+  "format_on_save": "off",
+  "ensure_final_newline_on_save": false,
+  "file_types": {
+    "Markdown": ["plan"],
+  }
 }
