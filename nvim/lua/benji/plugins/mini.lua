@@ -1,11 +1,6 @@
-return {
-	'nvim-mini/mini.pick',
-	version = '*',
-	config = function()
-		require('mini.pick').setup()
-		vim.keymap.set('n', '<leader>pf', ':Pick files<CR>')
-		vim.keymap.set('n', '<leader>ps', ':Pick grep live<CR>')
-		vim.keymap.set('n', '<leader>pb', ':Pick buffers<CR>')
-		-- vim.keymap.set('n', '<C-p>', pick_git_files)
-	end,
-}
+local minipick = require('mini.pick')
+minipick.setup()
+vim.keymap.set('n', '<leader>pf', minipick.builtin.files) -- ':Pick files<CR>')
+vim.keymap.set('n', '<leader>ps', minipick.builtin.grep_live) -- ':Pick grep live<CR>')
+vim.keymap.set('n', '<leader>pb', minipick.builtin.buffers) -- ':Pick buffers<CR>')
+-- vim.keymap.set('n', '<C-p>', function() minipick.builtin.files({ tool = 'git' }) end)
