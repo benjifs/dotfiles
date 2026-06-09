@@ -1,3 +1,4 @@
+aerospace=~/.config/aerospace
 bin=~/.local/bin
 config/aliases=~/.config/aliases
 config/macos_aliases=~/.config/macos_aliases
@@ -6,10 +7,7 @@ git=~/.config/git
 gnupg/gpg.conf=~/.config/gnupg/gpg.conf
 gnupg/gpg-agent-macos-arm.conf=~/.config/gnupg/gpg-agent.conf
 nvim=~/.config/nvim
-skhd=~/.config/skhd
 tmux=~/.config/tmux
-vscodium/settings.json=~/Library/Application Support/VSCodium/User/settings.json
-yabai=~/.config/yabai
 zed/settings.json=~/.config/zed/settings.json
 zsh=~/.config/zsh
 zsh/zshenv=~/.zshenv
