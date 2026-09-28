@@ -55,16 +55,21 @@ start-at-login = true
     alt-shift-8 = 'move-node-to-workspace 8'
     alt-shift-9 = 'move-node-to-workspace 9'
 
-    alt-left = 'workspace --wrap-around prev'
-    alt-right = 'workspace --wrap-around next'
+#    alt-left = 'workspace --wrap-around prev'
+#    alt-right = 'workspace --wrap-around next'
 
-    alt-tab = 'workspace-back-and-forth'
-    alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+#    alt-tab = 'workspace-back-and-forth'
+#    alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
     alt-shift-semicolon = 'mode service'
 
 [mode.service.binding]
     esc = ['reload-config', 'mode main']
     r = ['flatten-workspace-tree', 'mode main'] # reset layout
-    backspace = ['close-all-windows-but-current', 'mode main']
+#    backspace = ['close-all-windows-but-current', 'mode main']
+
+# Ignore tiling for these apps
+[[on-window-detected]]
+    if.app-id = 'com.amazonaws.acvc.osx'
+    run = ['layout floating', 'move-node-to-workspace 3']
 

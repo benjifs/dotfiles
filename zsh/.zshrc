@@ -1,5 +1,5 @@
 # Basic zsh configuration
-export ZSH_THEME=scunner
+export ZSH_THEME=leatherback
 
 # To sign commits with GPG
 export GPG_TTY=$(tty)

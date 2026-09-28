@@ -31,14 +31,14 @@ else
 	info "Skipped git setup"
 fi
 
-read -r -p "Would you like to run yabai and skhd on startup? [y/N] " response
-if [[ $response =~ ^(y|yes|Y) ]]; then
-	yabai --start-service
-	skhd --start-service
-	success
-else
-	info "Skipped yabai/skhd setup"
-fi
+# read -r -p "Would you like to run yabai and skhd on startup? [y/N] " response
+# if [[ $response =~ ^(y|yes|Y) ]]; then
+# 	yabai --start-service
+# 	skhd --start-service
+# 	success
+# else
+# 	info "Skipped yabai/skhd setup"
+# fi
 
 read -r -p "Would you like to run 'slink' to link your dotfiles [y/N] " response
 if [[ $response =~ ^(y|yes|Y) ]]; then

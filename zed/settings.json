@@ -1,5 +1,25 @@
 // Zed settings
 {
+  "show_wrap_guides": true,
+  "soft_wrap": "none",
+  "cli_default_open_behavior": "new_window",
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "dock": "left"
+  },
   "disable_ai": true,
   "title_bar": {
     // "show_onboarding_banner": false,
